@@ -1,3 +1,4 @@
+"use client";
 import React, { ReactNode } from "react";
 import styled from "styled-components";
 
@@ -12,7 +13,11 @@ interface BackgroundImageDivProps {
   children: ReactNode;
   className?: string;
 }
-const BackgroundImageDiv = ({ children, url, className }: BackgroundImageDivProps) => {
+const BackgroundImageDiv = ({
+  children,
+  url,
+  className,
+}: BackgroundImageDivProps) => {
   return (
     <Div className={className} imageURL={url}>
       {children}

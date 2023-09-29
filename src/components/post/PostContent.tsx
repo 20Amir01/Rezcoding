@@ -47,9 +47,7 @@ const PostContent = ({
       ) : (
         <h2
           className={`font-medium ${
-            layout == "horizontal"
-              ? "text-lg md:text-2xl"
-              : "text-lg"
+            layout == "horizontal" ? "text-lg md:text-2xl" : "text-lg"
           } text-neutral-700`}
         >
           {post?.title}

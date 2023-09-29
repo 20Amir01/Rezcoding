@@ -53,7 +53,7 @@ const Navigation = () => {
                 : "text-neutral-600"
             }`}
           >
-            کمی با من آشنا بشید !
+من و وبسایتم !
           </Link>
         </div>
       </PaddingContainer>
