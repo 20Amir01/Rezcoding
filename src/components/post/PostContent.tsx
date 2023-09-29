@@ -21,7 +21,7 @@ const PostContent = ({
   layout = "horizontal",
 }: PostContentProps) => {
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       {/* tags */}
       <div className="text-[0.8rem] flex-wrap font-semibold sm:font-normal flex gap-1 items-center text-neutral-400">
         {post?.categories?.map((item: any) => (
@@ -40,24 +40,34 @@ const PostContent = ({
         <div>{post && getRelativeDate(post._createdAt)}</div>
       </div>
       {/* post title */}
-      <h2
-        className={`${
-          isPostPage
-            ? `font-bold text-2xl md:text-3xl lg:text-5xl text-neutral-600`
-            : `font-medium text-2xl text-neutral-700`
-        }`}
-      >
-        {post?.title}
-      </h2>
+      {isPostPage ? (
+        <h1 className="font-bold text-2xl md:text-3xl lg:text-5xl text-center text-neutral-600">
+          {post?.title}
+        </h1>
+      ) : (
+        <h2
+          className={`font-medium ${
+            layout == "horizontal"
+              ? "text-lg md:text-2xl"
+              : "text-lg"
+          } text-neutral-700`}
+        >
+          {post?.title}
+        </h2>
+      )}
       {/* desc */}
-      <p className={`text-neutral-600 leading-snug text-sm line-clamp-2 text-opacity-90 ${isPostPage?"text-lg text-neutral-700 font-semibold":""}`}>
-        {post?.description}
-      </p>
+      {!isPostPage && (
+        <p className="text-neutral-600 leading-snug text-sm line-clamp-2 text-opacity-90">
+          {post?.description}
+        </p>
+      )}
       {/* read more */}
       {!isPostPage && (
         <div
           className={`flex gap-2 items-center text-neutral-500 font-semibold ${
-            layout === "horizontal" ? "text-sm justify-center md:justify-start md:mr-10 md:text-lg" : "text-sm justify-center"
+            layout === "horizontal"
+              ? "text-sm justify-center md:justify-start md:text-lg"
+              : "text-sm justify-center"
           }`}
         >
           مطالعه

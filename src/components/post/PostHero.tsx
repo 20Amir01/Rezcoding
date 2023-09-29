@@ -12,9 +12,9 @@ interface PostHeroProps {
 }
 const PostHero = ({ post }: PostHeroProps) => {
   return (
-    <div className="w-full mx-auto mt-5">
+    <div className="w-full mx-auto space-y-5 mb-10">
       <PostContent isPostPage post={post} />
-      <Image src={urlFor(post.mainImage).url()} alt={post.title} className="h-[300px] rounded-md my-5 object-cover object-center md:h-[500px]" width={1280} height={500}/>
+      <Image src={urlFor(post.mainImage).url()} alt={post.title} className="h-[300px] rounded-md object-cover object-center md:h-[500px]" width={1280} height={500}/>
     </div>
   );
 };

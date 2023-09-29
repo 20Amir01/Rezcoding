@@ -6,6 +6,7 @@ type Base = {
   _updatedAt: string;
 };
 export interface Post extends Base {
+  map: any;
   author: Author;
   body: Block[];
   categories: Category[];

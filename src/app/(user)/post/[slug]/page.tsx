@@ -19,7 +19,7 @@ const PostPage = async ({ params: { slug } }: Props) => {
   // {console.log("log body : ",post.body)}
   return (
     <PaddingContainer>
-      <article className="mt-5">
+      <article className="my-5">
         <PostHero post={post} />
       {/* <CTACard/> */}
         <PostBody value={post.body}/>
