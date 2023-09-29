@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import ClientSideTypeIt from "@/components/ClientSideTypeIt";
 import BackgroundImageDiv from "@/components/elements/BackgroundImageDiv";
 import PaddingContainer from "@/components/layout/PaddingContainer";
 const AboutMePage = () => {

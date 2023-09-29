@@ -14,11 +14,16 @@ const Footer = () => {
           {/* <div className="text-lg font-medium">#explore the world</div> */}
           <div className="space-y-2">
             <div className="flex flex-col items-center gap-1">
-              <p>توسعه و طراحی :</p>
-              <p>
-                امیرمحمدهمتی /{" "}
-                <span className="text-sm">Amir Mohammad Hemmati</span>
-              </p>
+              <p className="text-[0.7rem] sm:text-[1rem]">توسعه و طراحی :</p>
+              <div className="w-full">
+                <span className="text-[0.7rem] sm:text-[1rem]">
+                  امیرمحمدهمتی{" "}
+                </span>
+                <span className="text-[0.7rem] sm:text-[1rem]"> | </span>
+                <span className="text-[0.6rem] sm:text-[0.9rem]">
+                  Amir Mohammad Hemmati
+                </span>
+              </div>
             </div>
             <div className="text-center flex flex-col items-center">
               <p>راه های ارتباط با من</p>
@@ -46,8 +51,8 @@ const Footer = () => {
         </div>
         {/* bottom section */}
         <div className="py-3 border-t flex items-center gap-4 flex-wrap justify-center mt-2">
-          <div className="text-sm text-neutral-400">
-            <p>
+          <div>
+            <p className="text-neutral-400 text-[0.7rem] sm:text-[1rem]">
               All rights are reserved | Copyright {new Date().getFullYear()}
             </p>
           </div>

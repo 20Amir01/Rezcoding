@@ -5,7 +5,7 @@ import PaddingContainer from "@/components/layout/PaddingContainer";
 import PostCard from "@/components/post/PostCard";
 import PostList from "@/components/post/PostList";
 import { client } from "@/lib/sanity.client";
-import { ChevronDown, Library } from "lucide-react";
+import { Library } from "lucide-react";
 import { groq } from "next-sanity";
 const query = groq` 
   *[_type=='post']{
