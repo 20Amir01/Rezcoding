@@ -10,6 +10,7 @@ interface PostProps {
   post: Post;
   layout?: "vertical" | "horizontal";
   reverse?: boolean;
+  id?: string;
 }
 const PostCard = ({
   post,
@@ -27,7 +28,9 @@ const PostCard = ({
     >
       {/* post image */}
       <Image
-        className={`rounded-md w-full object-cover object-center h-full max-h-[300px] ${reverse?"sm:order-last":""}`}
+        className={`rounded-md w-full object-cover object-center h-full max-h-[300px] ${
+          reverse ? "sm:order-last" : ""
+        }`}
         alt={post.title}
         src={urlFor(post.mainImage).url()}
         width={600}

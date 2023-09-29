@@ -5,6 +5,8 @@ import {
   Github,
   Youtube,
   Facebook,
+  Mail,
+  LucideMail,
 } from "lucide-react";
 import Link from "next/link";
 import React, { ReactElement } from "react";
@@ -21,17 +23,19 @@ const SocialLink = ({
   const getIcon = (platform: string): ReactElement | String => {
     switch (platform) {
       case "linkedin":
-        return <Linkedin size={16} />;
+        return <Linkedin size={24} />;
       case "twitter":
-        return <Twitter size={16} />;
+        return <Twitter size={24} />;
       case "github":
-        return <Github size={16} />;
+        return <Github size={24} />;
       case "youtube":
-        return <Youtube size={16} />;
+        return <Youtube size={24} />;
       case "facebook":
-        return <Facebook size={16} />;
+        return <Facebook size={24} />;
       case "instagram":
-        return <Instagram size={16} />;
+        return <Instagram size={24} />;
+      case "email":
+        return <LucideMail size={24} />
       default:
         return "logo";
     }

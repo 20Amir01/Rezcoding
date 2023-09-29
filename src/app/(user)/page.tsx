@@ -5,6 +5,7 @@ import PaddingContainer from "@/components/layout/PaddingContainer";
 import PostCard from "@/components/post/PostCard";
 import PostList from "@/components/post/PostList";
 import { client } from "@/lib/sanity.client";
+import { ChevronDown, Library } from "lucide-react";
 import { groq } from "next-sanity";
 const query = groq` 
   *[_type=='post']{
@@ -22,21 +23,29 @@ export default async function HomePage() {
         banner
         imageURL="https://i.ibb.co/wcY820P/Grey-Minimalist-Tips-Blog-Banner.png"
       >
-      <div className="h-full w-full flex items-center justify-center text-neutral-100 drop-shadow-xl font-bold [text-shadow:_0_3px_1px_black]">
-      <ClientSideTypeIt className="text-md sm:text-3xl md:text-4xl lg:text-5xl" options={{
-          speed: 100,
-          waitUntilVisible: true,
-        }}>
-          واقعا همه می تونن برنامه نویس بشن ؟🤔
-        </ClientSideTypeIt>
-      </div>
+        <div className="h-full w-full flex items-center justify-center text-neutral-100 drop-shadow-xl font-bold [text-shadow:_0_3px_1px_black]">
+          <ClientSideTypeIt
+            className="text-sm sm:text-3xl md:text-4xl lg:text-5xl"
+            options={{
+              speed: 100,
+              waitUntilVisible: true,
+            }}
+          >
+            واقعا همه می تونن برنامه نویس بشن ؟🤔
+          </ClientSideTypeIt>
+        </div>
       </BgFixedDiv>
       <PaddingContainer>
         <main className="space-y-10 mt-10">
           {posts.length > 0 ? (
             <>
-              {" "}
-              <PostCard post={posts[0]} layout="horizontal"/>
+              <div className="w-full text-center flex flex-col items-center justify-center text-neutral-700">
+                <p className="text-xl font-semibold inline-flex gap-2">                
+                 <Library/>
+                 تمامی مقالات 
+                </p>
+              </div>
+              <PostCard post={posts[0]} layout="horizontal" />
               {/* <CTACard /> */}
               <PostList
                 posts={posts.filter(

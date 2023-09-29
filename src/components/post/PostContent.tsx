@@ -41,7 +41,7 @@ const PostContent = ({
       </div>
       {/* post title */}
       {isPostPage ? (
-        <h1 className="font-bold text-2xl md:text-3xl lg:text-5xl text-center text-neutral-600">
+        <h1 className="font-bold text-2xl md:text-3xl lg:text-5xl mr-10 text-neutral-600">
           {post?.title}
         </h1>
       ) : (
