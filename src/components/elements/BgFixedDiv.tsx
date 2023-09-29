@@ -20,7 +20,7 @@ const Div = styled.div<DivImageContainerProps>`
 const BannerDiv = styled.div<DivImageContainerProps>`
   @media (min-width: 768px) {
     height: auto;
-    m-height: 100dvh;
+    max-height: 100dvh;
     background-attachment: fixed;
   }
   background-image: url(${(props) => props.imageURL});
@@ -44,7 +44,7 @@ const BgFixedDiv = ({
   banner = false,
 }: BgFixedDivProps) => {
   const url = imageURL;
-  if (banner) return <BannerDiv imageURL={url}></BannerDiv>;
+  if (banner) return <BannerDiv imageURL={url}>{children}</BannerDiv>;
   return <Div imageURL={url}>{children}</Div>;
 };
 

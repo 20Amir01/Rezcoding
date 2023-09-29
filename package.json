@@ -21,7 +21,8 @@
     "react-dom": "latest",
     "react-portable-text": "^0.6.0",
     "reading-time": "^1.5.0",
-    "sanity": "^3.16.7"
+    "sanity": "^3.16.7",
+    "typeit-react": "^2.6.4"
   },
   "devDependencies": {
     "@types/node": "latest",
