@@ -1,4 +1,4 @@
-import Banner from "@/components/elements/Banner";
+import BgFixedDiv from "@/components/elements/BgFixedDiv";
 // import CTACard from "@/components/elements/CtaCard";
 import PaddingContainer from "@/components/layout/PaddingContainer";
 import PostCard from "@/components/post/PostCard";
@@ -18,7 +18,7 @@ export default async function HomePage() {
   const posts = await client.fetch(query);
   return (
     <main>
-      <Banner />
+      <BgFixedDiv banner imageURL="https://i.ibb.co/wcY820P/Grey-Minimalist-Tips-Blog-Banner.png"/>
       <PaddingContainer>
       <main className="space-y-10">
         {posts.length > 0 ? (

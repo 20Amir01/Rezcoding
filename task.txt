@@ -1,0 +1,3 @@
+-fix card مطالعه بیشتر
+-add portfolio page
+

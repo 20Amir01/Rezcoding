@@ -9,7 +9,7 @@ import MobileNav from "@/components/navigation/MobileNav";
 export const FONT_PRIMARY = Noto_Sans_Arabic({ subsets: ["arabic"] });
 
 export const metadata: Metadata = {
-  title: "وبلاگ",
+  title: "Rezcoding",
   description:
     "Let’s build a BLOG with Next.js 13 (Sanity v3, TypeScript, Tailwind CSS, Auth, CMS, Preview Mode)",
 };

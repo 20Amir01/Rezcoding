@@ -1,7 +1,7 @@
 import React from "react";
 
 import PostContent from "./PostContent";
-import PaddingContainer from "../layout/PaddingContainer";
+// import PaddingContainer from "../layout/PaddingContainer";
 import { Post } from "../../../typing";
 import Image from "next/image";
 import urlFor from "@/lib/urlFor";

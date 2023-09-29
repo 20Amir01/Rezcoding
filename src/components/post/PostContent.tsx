@@ -1,4 +1,4 @@
-import React, { Key, ReactElement } from "react";
+import React from "react";
 import { ChevronLeft } from "lucide-react";
 
 import { Post, Category } from "@/../../typing";

@@ -1,6 +1,6 @@
 import React from "react";
 import Navlinks from "./NavLinks";
-import { TriangleIcon } from "lucide-react";
+
 
 const CategoriesBox = () => {
   return (

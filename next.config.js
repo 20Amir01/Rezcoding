@@ -4,9 +4,12 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "miro.medium.com",
         hostname:"cdn.sanity.io"
       },
+      {
+        protocol: "https",
+        hostname:"i.ibb.co"
+      }
     ],
   },
 };

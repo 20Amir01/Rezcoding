@@ -3,7 +3,7 @@ import PaddingContainer from "../layout/PaddingContainer";
 
 import SocialLink from "../elements/SocialLink";
 import siteConfig from "@/config/site";
-import Logo from "../elements/Logo";
+
 
 const Footer = () => {
   return (
