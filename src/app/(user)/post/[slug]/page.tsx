@@ -3,8 +3,6 @@ import { client } from "@/lib/sanity.client";
 import { groq } from "next-sanity";
 import React from "react";
 import { Post } from "../../../../../typing";
-import Image from "next/image";
-import urlFor from "@/lib/urlFor";
 import PaddingContainer from "@/components/layout/PaddingContainer";
 import PostBody from "@/components/post/PostBody";
 import CTACard from "@/components/elements/CtaCard";

@@ -3,7 +3,7 @@ import React from "react";
 import TypeIt from "typeit-react";
 
 interface ClientSideTypeItProps {
-  children: string;
+  children: React.ReactNode;
   options?: {};
   className?: string;
 }
@@ -13,9 +13,9 @@ const ClientSideTypeIt = ({
   className = "",
 }: ClientSideTypeItProps) => {
   return (
-    <p className={className}>
+    <div className={className}>
       <TypeIt options={options}>{children}</TypeIt>
-    </p>
+    </div>
   );
 };
 

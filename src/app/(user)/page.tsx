@@ -32,7 +32,7 @@ export default async function HomePage() {
       </div>
       </BgFixedDiv>
       <PaddingContainer>
-        <main className="space-y-10">
+        <main className="space-y-10 mt-10">
           {posts.length > 0 ? (
             <>
               {" "}
