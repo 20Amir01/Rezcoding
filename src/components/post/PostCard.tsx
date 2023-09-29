@@ -21,13 +21,13 @@ const PostCard = ({
       route={`/post/${post.slug.current}`}
       className={`bg-white px-2.5 py-10 rounded-md ${
         layout === "horizontal"
-          ? "grid grid-cols-1 sm:gap-5 sm:grid-cols-2 md:gap-10 items-center"
+          ? `grid grid-cols-1 sm:gap-5 sm:grid-cols-2 md:gap-10 items-center`
           : "w-full flex flex-col"
       }`}
     >
       {/* post image */}
       <Image
-        className="rounded-md w-full object-cover object-center h-full max-h-[300px]"
+        className={`rounded-md w-full object-cover object-center h-full max-h-[300px] ${reverse?"sm:order-last":""}`}
         alt={post.title}
         src={urlFor(post.mainImage).url()}
         width={600}

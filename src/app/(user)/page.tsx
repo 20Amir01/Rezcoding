@@ -36,7 +36,7 @@ export default async function HomePage() {
           {posts.length > 0 ? (
             <>
               {" "}
-              <PostCard post={posts[0]} layout="horizontal" />
+              <PostCard post={posts[0]} layout="horizontal"/>
               {/* <CTACard /> */}
               <PostList
                 posts={posts.filter(

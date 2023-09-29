@@ -57,7 +57,7 @@ const PostContent = ({
       {!isPostPage && (
         <div
           className={`flex gap-2 items-center text-neutral-500 font-semibold ${
-            layout === "horizontal" ? "text-lg" : " text-sm justify-center"
+            layout === "horizontal" ? "text-sm justify-center md:justify-start md:mr-10 md:text-lg" : "text-sm justify-center"
           }`}
         >
           مطالعه
