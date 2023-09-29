@@ -14,7 +14,7 @@ const Footer = () => {
           {/* <div className="text-lg font-medium">#explore the world</div> */}
           <div className="space-y-2">
             <div className="flex flex-col items-center gap-1">
-              <p className="text-[0.7rem] sm:text-[1rem]">توسعه و طراحی :</p>
+              <p className="text-[0.7rem] sm:text-[1rem]">طراحی و توسعه</p>
               <div className="w-full">
                 <span className="text-[0.7rem] sm:text-[1rem]">
                   امیرمحمدهمتی{" "}
