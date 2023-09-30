@@ -1,10 +1,10 @@
 import React from "react";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Dot } from "lucide-react";
 
 import { Post, Category } from "@/../../typing";
 import { getReadingTime, getRelativeDate } from "@/lib/helpers";
-import PortableText from "react-portable-text";
-
+import urlFor from "@/lib/urlFor";
+import Image from "next/image";
 interface PostContentProps {
   post: Post;
   isPostPage?: boolean;
@@ -21,23 +21,52 @@ const PostContent = ({
   layout = "horizontal",
 }: PostContentProps) => {
   return (
-    <div className="space-y-5">
+    <div className="space-y-2">
       {/* tags */}
-      <div className="text-[0.8rem] flex-wrap font-semibold sm:font-normal flex gap-1 items-center text-neutral-400">
-        {post?.categories?.map((item: any) => (
-          <div className={`font-bold ${"text-indigo-600"}`} key={item._id}>
-            {item.title}
+      <div
+        className={`text-[0.7rem] flex-wrap font-semibold sm:font-normal gap-0 flex items-center text-neutral-400 ${
+          isPostPage ? "text-[100%]" : ""
+        }`}
+      >
+        {post.author && (
+          <div className="flex items-center justify-center gap-1">
+            <Image
+              src={urlFor(post.author.image).url()}
+              className={`object-center object-cover rounded-full ${
+                isPostPage ? "w-16 h-16" : "w-7 h-7"
+              }`}
+              width={50}
+              height={50}
+              alt="author image"
+            />
+            <span>{post.author.name}</span>
+            <Dot />
           </div>
-        ))}
-        <div className="rounded-full w-1 h-1 bg-neutral-200"></div>
-        <div>{post.author.name}</div>
-        <div className="rounded-full w-1 h-1 bg-neutral-200"></div>
+        )}
+        {post?.categories &&
+          post.categories.map((category: any) => (
+            <>
+              <div
+                className={`font-bold ${
+                  category.color
+                    ? `text-[${category.color}]`
+                    : "text-neutral-500"
+                }`}
+                key={category._id}
+              >
+                {category.title}
+              </div>
+              <Dot />
+            </>
+          ))}
+
         <div>
           {/* {post && getReadingTime(PortableText(post.body))} */}
           {/* 10 min (test) */}
         </div>
-        {/* <div className="rounded-full w-1 h-1 bg-neutral-200"></div> */}
-        <div>{post && getRelativeDate(post._createdAt)}</div>
+        {post._createdAt && (
+          <div>{post && getRelativeDate(post._createdAt)}</div>
+        )}
       </div>
       {/* post title */}
       {isPostPage ? (
