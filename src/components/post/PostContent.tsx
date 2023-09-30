@@ -64,7 +64,7 @@ const PostContent = ({
           {/* 10 min (test) */}
         </div>
         {post._createdAt && (
-          <div>{post && getRelativeDate(post._createdAt)}</div>
+          <div dir="ltr">{post && getRelativeDate(post._createdAt)}</div>
         )}
       </div>
       {/* post title */}
