@@ -5,10 +5,23 @@ import React from "react";
 import { Post } from "../../../../../typing";
 import PaddingContainer from "@/components/layout/PaddingContainer";
 import PostBody from "@/components/post/PostBody";
-import CTACard from "@/components/elements/CtaCard";
+// import CTACard from "@/components/elements/CtaCard";
 type Props = {
   params: { slug: string };
 };
+export const revalidate = 60;
+export async function generateStaticParams() {
+  const query = groq`
+  *[_type=='post']
+  {
+    slug
+  }
+  `;
+  const slugs: Post[] = await client.fetch(query);
+  const slugRoutes = slugs.map((slug) => slug.slug.current);
+  return slugRoutes.map((slug) => ({ slug }));
+}
+
 const PostPage = async ({ params: { slug } }: Props) => {
   const query = groq`
     *[_type == "post"&&slug.current==$slug][0]
@@ -16,13 +29,12 @@ const PostPage = async ({ params: { slug } }: Props) => {
   `;
   const post: Post = await client.fetch(query, { slug });
 
-  // {console.log("log body : ",post.body)}
   return (
     <PaddingContainer>
       <article className="my-5">
         <PostHero post={post} />
-      {/* <CTACard/> */}
-        <PostBody value={post.body}/>
+        {/* <CTACard/> */}
+        <PostBody value={post.body} />
       </article>
     </PaddingContainer>
   );

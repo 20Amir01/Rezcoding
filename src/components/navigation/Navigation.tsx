@@ -4,14 +4,13 @@ import Link from "next/link";
 import PaddingContainer from "../layout/PaddingContainer";
 // import { Library, Menu } from "lucide-react";
 import { useBlog } from "@/contexts/BlogProvider";
-import { useEffect, useState } from "react";
 import Logo from "../elements/Logo";
 // import CategoriesBox from "./CategoriesBox";
 import { usePathname } from "next/dist/client/components/navigation";
 
 const Navigation = () => {
   const { dispatch } = useBlog();
-  const [categoriesToggle, setCategoriesToggle] = useState(false);
+  // const [categoriesToggle, setCategoriesToggle] = useState(false);
   // const handleMobileMenuBtnClick = () => {
   //   dispatch({ type: "mobile-menu-display/active" });
   // };
@@ -19,32 +18,10 @@ const Navigation = () => {
   //   setCategoriesToggle(!categoriesToggle);
   // };
 
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [navbarHidden, setNavbarHidden] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      if (prevScrollPos > currentScrollPos) {
-        setNavbarHidden(false);
-      } else {
-        setNavbarHidden(true);
-      }
-
-      setPrevScrollPos(currentScrollPos);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [prevScrollPos]);
   const pathname = usePathname();
   return (
     <div
-      className={`${
-        navbarHidden ? "static" : "sticky"
-      } transition-all navigation-anime top-0 left-0 right-0 bg-white z-30`}
+      className={`sticky transition-all navigation-anime top-0 left-0 right-0 bg-white z-30`}
     >
       <PaddingContainer>
         <div className="py-5 flex items-center justify-between flex-row-reverse">
