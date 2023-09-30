@@ -28,7 +28,6 @@ const PostPage = async ({ params: { slug } }: Props) => {
     {...,author->,categories[]->}
   `;
   const post: Post = await client.fetch(query, { slug });
-console.log(post)
   return (
     <PaddingContainer>
       <article className="my-5">
