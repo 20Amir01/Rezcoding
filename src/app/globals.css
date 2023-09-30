@@ -10,6 +10,19 @@ html {
      animation: mobileNav 0.3s ease-out;
 }
 
+code {
+     width: 100%;
+     background-color: #111;
+     display: flex;
+     justify-content: flex-start;
+     color: pink;
+     direction: ltr;
+     padding: 1rem;
+     height: auto;
+     border-radius: 1rem;
+     margin: 1rem 0;
+}
+
 @keyframes mobileNav {
      from {
           opacity: 0;
