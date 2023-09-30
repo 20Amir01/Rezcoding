@@ -9,7 +9,7 @@ import PostBody from "@/components/post/PostBody";
 type Props = {
   params: { slug: string };
 };
-export const revalidate = 60;
+export const revalidate = 30;
 export async function generateStaticParams() {
   const query = groq`
   *[_type=='post']
