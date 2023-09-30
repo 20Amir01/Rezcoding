@@ -22,7 +22,7 @@ const PostCard = ({
       route={`/post/${post.slug.current}`}
       className={`bg-white px-2.5 py-10 rounded-md ${
         layout === "horizontal"
-          ? `grid grid-cols-1 sm:gap-5 sm:grid-cols-2 md:gap-10 items-center`
+          ? `grid grid-cols-1 sm:gap-5 sm:grid-cols-2 md:gap-5 md:px-5 justify-center items-center sm:col-span-2 md:col-span-3`
           : "w-full flex flex-col"
       }`}
     >

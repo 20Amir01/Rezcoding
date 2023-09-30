@@ -17,6 +17,7 @@ const query = groq`
 
 export default async function HomePage() {
   const posts = await client.fetch(query);
+  let counter = 1;
   return (
     <main>
       <BgFixedDiv
@@ -40,28 +41,12 @@ export default async function HomePage() {
           {posts.length > 0 ? (
             <>
               <div className="w-full text-center flex flex-col items-center justify-center text-neutral-700">
-                <p className="text-xl font-semibold inline-flex gap-2">                
-                 <Library/>
-                 تمامی مقالات 
+                <p className="text-xl font-semibold inline-flex gap-2">
+                  <Library />
+                  تمامی مقالات
                 </p>
               </div>
-              <PostCard post={posts[0]} layout="horizontal" />
-              {/* <CTACard /> */}
-              <PostList
-                posts={posts.filter(
-                  (_: any, index: number) => index > 0 && index < 7
-                )}
-                layout="vertical"
-              />
-              {posts.at(7) && (
-                <>
-                  <PostCard post={posts[7]} layout="horizontal" reverse />
-                  <PostList
-                    posts={posts.filter((_: any, index: number) => index > 7)}
-                    layout="vertical"
-                  />
-                </>
-              )}
+              <PostList posts={posts} />
             </>
           ) : (
             <div>
