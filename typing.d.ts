@@ -19,15 +19,20 @@ export interface Post extends Base {
 }
 
 interface Author {
+  _createdAt:string;
+  _id:string;
+  _rev:string;
+  _type:"author";
+  _updatedAt: string;
+  _id: string;
   image: {
     asset: Image;
     _type: "image";
     alt: string;
   };
-  name: string;
-  _id: string;
-  _updatedAt: string;
   slug: Slug;
+  name: string;
+  bio:Block;
 }
 
 interface Image {
@@ -64,4 +69,5 @@ interface Category extends Base {
   _type: "category";
   description: string;
   _id: string;
+  color:string;
 }

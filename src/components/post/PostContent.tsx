@@ -56,7 +56,9 @@ const PostContent = ({
               <Dot />
             </>
           ))}
-
+          {/* {
+            post?.body&& <> <div>زمان مطالعه : {getReadingTime(post.body.toLocaleString()).split('').splice(0,2)}</div><Dot/></>
+          } */}
         <div>
           {/* {post && getReadingTime(PortableText(post.body))} */}
           {/* 10 min (test) */}

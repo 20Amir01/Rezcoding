@@ -5,7 +5,6 @@ import React from "react";
 import { Post } from "../../../../../typing";
 import PaddingContainer from "@/components/layout/PaddingContainer";
 import PostBody from "@/components/post/PostBody";
-// import CTACard from "@/components/elements/CtaCard";
 type Props = {
   params: { slug: string };
 };
@@ -28,6 +27,7 @@ const PostPage = async ({ params: { slug } }: Props) => {
     {...,author->,categories[]->}
   `;
   const post: Post = await client.fetch(query, { slug });
+ 
   return (
     <PaddingContainer>
       <article className="my-5">
