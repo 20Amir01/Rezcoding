@@ -24,8 +24,8 @@ const PostContent = ({
     <div className="space-y-2">
       {/* tags */}
       <div
-        className={`text-[0.7rem] flex-wrap font-semibold sm:font-normal gap-0 flex items-center text-neutral-400 ${
-          isPostPage ? "text-[100%]" : ""
+        className={`text-[0.6rem] lg:text-[0.8rem] flex-wrap font-semibold flex justify-start items-center text-neutral-400 ${
+          isPostPage ? "md:text-[100%]" : ""
         }`}
       >
         {post.author && (
@@ -33,7 +33,7 @@ const PostContent = ({
             <Image
               src={urlFor(post.author.image).url()}
               className={`object-center object-cover rounded-full ${
-                isPostPage ? "w-16 h-16" : "w-7 h-7"
+                isPostPage ? "w-7 md:w-16 h-7 md:h-16" : "w-7 h-7"
               }`}
               width={50}
               height={50}
