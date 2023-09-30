@@ -47,11 +47,8 @@ const PostContent = ({
           post.categories.map((category: any) => (
             <>
               <div
-                className={`font-bold ${
-                  category.color
-                    ? `text-[${category.color}]`
-                    : "text-neutral-500"
-                }`}
+                style={{color:category.color?category.color:"#333"}}
+                className={`font-bold`}
                 key={category._id}
               >
                 {category.title}
