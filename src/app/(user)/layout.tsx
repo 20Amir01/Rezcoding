@@ -20,7 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fa" dir="rtl">
+    <html
+      lang="fa"
+      dir="rtl"
+      className="selection:text-neutral-100 selection:bg-neutral-700"
+    >
       <body className={`${FONT_PRIMARY.className} bg-neutral-100`}>
         <Provider>
           <Navigation />

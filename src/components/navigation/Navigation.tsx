@@ -4,7 +4,7 @@ import Link from "next/link";
 import PaddingContainer from "../layout/PaddingContainer";
 // import { Library, Menu } from "lucide-react";
 import { useBlog } from "@/contexts/BlogProvider";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "../elements/Logo";
 // import CategoriesBox from "./CategoriesBox";
 import { usePathname } from "next/dist/client/components/navigation";
@@ -18,9 +18,34 @@ const Navigation = () => {
   // const handleCategoriesToggle = () => {
   //   setCategoriesToggle(!categoriesToggle);
   // };
+
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [navbarHidden, setNavbarHidden] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      if (prevScrollPos > currentScrollPos) {
+        setNavbarHidden(false);
+      } else {
+        setNavbarHidden(true);
+      }
+
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
   const pathname = usePathname();
   return (
-    <div className="sticky top-0 left-0 right-0 bg-white z-30">
+    <div
+      className={`${
+        navbarHidden ? "static" : "sticky"
+      } transition-all navigation-anime top-0 left-0 right-0 bg-white z-30`}
+    >
       <PaddingContainer>
         <div className="py-5 flex items-center justify-between flex-row-reverse">
           <Link className="font-bold text-lg" href="/">
@@ -53,7 +78,7 @@ const Navigation = () => {
                 : "text-neutral-600"
             }`}
           >
-من و وبسایتم !
+            من و وبسایتم !
           </Link>
         </div>
       </PaddingContainer>

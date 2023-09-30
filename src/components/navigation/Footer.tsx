@@ -27,7 +27,7 @@ const Footer = () => {
             </div>
             <div className="text-center flex flex-col items-center">
               <p>راه های ارتباط با من</p>
-              <ChevronDown />
+              <ChevronDown className="animate-bounce"/>
             </div>
             <div className="flex justify-center gap-2">
               <SocialLink
