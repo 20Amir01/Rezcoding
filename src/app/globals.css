@@ -28,18 +28,20 @@ html {
      -webkit-text-fill-color: transparent;
 }
 
-code {
+.user code {
      width: 100%;
      background-color: #111;
      display: flex;
      justify-content: flex-start;
-     color: pink;
+     color: greenyellow;
      direction: ltr;
      padding: 1rem;
+     line-height: 40px;
      height: auto;
      border-radius: 1rem;
      margin: 1rem 0;
 }
+
 
 @keyframes mobileNav {
      from {
