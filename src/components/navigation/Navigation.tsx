@@ -20,8 +20,8 @@ const Navigation = () => {
 
   const pathname = usePathname();
   return (
-    <div
-      className={`sticky transition-all navigation-anime top-0 left-0 right-0 bg-white z-30`}
+    <header
+      className={`sticky transition-all navigation-anime top-0 left-0 right-0 bg-white bg-opacity-80 backdrop-blur-sm z-30`}
     >
       <PaddingContainer>
         <div className="py-5 flex items-center justify-between flex-row-reverse">
@@ -59,7 +59,7 @@ const Navigation = () => {
           </Link>
         </div>
       </PaddingContainer>
-    </div>
+    </header>
   );
 };
 export default Navigation;

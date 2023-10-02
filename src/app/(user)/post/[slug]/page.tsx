@@ -30,7 +30,7 @@ const PostPage = async ({ params: { slug } }: Props) => {
  
   return (
     <PaddingContainer>
-      <article className="my-5">
+      <article className="py-5">
         <PostHero post={post} />
         {/* <CTACard/> */}
         <PostBody value={post.body} />

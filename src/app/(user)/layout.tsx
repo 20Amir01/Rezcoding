@@ -19,7 +19,9 @@ export default function RootLayout({
      
           <Navigation />
           {/* <MobileNav /> */}
-          {children}
+
+            {children}
+    
           <Footer />
         
       </div>
