@@ -17,8 +17,8 @@ const query = groq`
 export const revalidate = 30;
 
 export default async function HomePage() {
-  const posts = await client.fetch(query);
-  let counter = 1;
+  const posts = await client.fetch(query).then(data=>data.reverse());
+
   return (
     <main>
       <BgFixedDiv

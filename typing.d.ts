@@ -6,6 +6,8 @@ type Base = {
   _updatedAt: string;
 };
 export interface Post extends Base {
+  at(arg0: number): unknown;
+  reverse(): unknown;
   map: any;
   author: Author;
   body: Block[];
