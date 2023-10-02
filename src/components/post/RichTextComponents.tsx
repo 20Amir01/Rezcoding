@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import urlFor from "@/lib/urlFor";
+import CodeBlock from "../elements/CodeBlock";
 const RichTextComponents = {
   types: {
     image: ({ value }: any) => (
@@ -38,6 +39,7 @@ const RichTextComponents = {
     ),
   },
   marks: {
+    code:({children}:any)=><CodeBlock>{children}</CodeBlock>,
     link: ({ children, value }: any) => {
       const rel = !value.href?.startsWith("/")
         ? "noreferrer noopener"

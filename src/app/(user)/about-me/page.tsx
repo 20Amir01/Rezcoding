@@ -20,7 +20,6 @@ const query = groq`
 
 const AboutMePage = async () => {
   const author = await client.fetch(query).then(data=>data.at(0));
-  console.log(author)
   return (
     
     <>
