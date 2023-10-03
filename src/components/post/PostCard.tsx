@@ -20,7 +20,7 @@ const PostCard = ({
   return (
     <ClientSideRoute
       route={`/post/${post.slug.current}`}
-      className={`px-2.5 py-10 rounded-md gap-2 bg-white shadow-sm md:hover:shadow-lg ${
+      className={`px-2.5 py-10 rounded-md gap-2 bg-white shadow-sm ${
         layout === "horizontal"
           ? `grid grid-cols-1 sm:gap-5 sm:grid-cols-2 md:gap-5 md:px-5 justify-center items-center sm:col-span-2 md:col-span-3  `
           : "w-full flex flex-col"
