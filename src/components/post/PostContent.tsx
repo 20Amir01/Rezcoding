@@ -37,6 +37,7 @@ const PostContent = ({
               }`}
               width={50}
               height={50}
+              quality={100}
               alt="author image"
             />
             <span>{post.author.name}</span>

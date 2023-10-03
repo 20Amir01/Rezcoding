@@ -8,7 +8,7 @@ interface BodyProps {
 
 const PostBody = ({ value }: BodyProps) => {
   return (
-    <section className="sm:text-[125%] text-neutral-700 text-justify leading-10 font-medium max-w-3xl mx-auto w-full]">
+    <section className="sm:text-[125%] text-neutral-700 text-justify leading-10 font-medium max-w-2xl mx-auto w-full]">
       <PortableText value={value} components={RichTextComponents} />
     </section>
   );
