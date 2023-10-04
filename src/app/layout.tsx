@@ -2,6 +2,7 @@ import Provider from "@/components/Provider";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Noto_Sans_Arabic, Markazi_Text } from "next/font/google";
+import ReactQueryClientProvider from "@/lib/ReactQueryClientProvider";
 export const FONT_PRIMARY = Noto_Sans_Arabic({ subsets: ["arabic"] });
 
 export const metadata: Metadata = {
@@ -21,7 +22,9 @@ export default function RootLayout({
       className="selection:text-neutral-100 selection:bg-neutral-700"
     >
       <body className={`${FONT_PRIMARY.className} bg-neutral-50`}>
-        <Provider>{children}</Provider>
+        <ReactQueryClientProvider>
+          <Provider>{children}</Provider>
+        </ReactQueryClientProvider>
       </body>
     </html>
   );

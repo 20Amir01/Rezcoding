@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import PaddingContainer from "../layout/PaddingContainer";
 // import { Library, Menu } from "lucide-react";
@@ -7,16 +6,18 @@ import { useBlog } from "@/contexts/BlogProvider";
 import Logo from "../elements/Logo";
 // import CategoriesBox from "./CategoriesBox";
 import { usePathname } from "next/dist/client/components/navigation";
+import { ChevronLeft, Library, Menu } from "lucide-react";
+import { useState } from "react";
 
 const Navigation = () => {
   const { dispatch } = useBlog();
-  // const [categoriesToggle, setCategoriesToggle] = useState(false);
-  // const handleMobileMenuBtnClick = () => {
-  //   dispatch({ type: "mobile-menu-display/active" });
-  // };
-  // const handleCategoriesToggle = () => {
-  //   setCategoriesToggle(!categoriesToggle);
-  // };
+  const [categoriesToggle, setCategoriesToggle] = useState(false);
+  const handleMobileMenuBtnClick = () => {
+    dispatch({ type: "mobile-menu-display/active" });
+  };
+  const handleCategoriesToggle = () => {
+    setCategoriesToggle(!categoriesToggle);
+  };
 
   const pathname = usePathname();
   return (
@@ -28,35 +29,45 @@ const Navigation = () => {
           <Link className="font-bold text-lg" href="/">
             <Logo />
           </Link>
-          {/* <div className="md:hidden">
-            <button onClick={handleMobileMenuBtnClick} title="menu">
-              <Menu />
-            </button>
+          <div className="flex items-center gap-1.5 font-semibold text-neutral-700">
+            {/* <div className="md:hidden flex items-center">
+              <button onClick={handleMobileMenuBtnClick} title="menu">
+                <Menu />
+              </button>
+            </div> */}
+            {/* <div className="hidden md:block relative">
+              <button
+                onClick={handleCategoriesToggle}
+                className="flex flex-row-reverse items-center text-sm"
+              >
+                دسته بندی مطالب
+                <span className="text-neutral-600">
+                  <Library />
+                </span>
+              </button>
+              {categoriesToggle && <CategoriesBox />}
+            </div> */}
+            {/* <div className="h-4 w-[2px] rounded-full bg-neutral-600 block"></div> */}
+            <nav className="flex items-center justify-center gap-2">
+            <Link
+                className={`text-sm ${
+                  pathname === "/blog" ? "text-blue-500" : ""
+                }`}
+                href="/blog"
+              >
+                وبلاگ
+              </Link>
+              <Link
+                className={`text-sm ${
+                  pathname === "/about-me" ? "text-blue-500" : ""
+                }`}
+                href="/about-me"
+              >
+               من کی ام ؟
+              </Link>
+
+            </nav>
           </div>
-          <div className="hidden md:block relative">
-            <button
-              onClick={handleCategoriesToggle}
-              className={`font-bold rounded-sm p-0.5 flex flex-row-reverse gap-2 transition-all hover:text-blue-500 ${
-                categoriesToggle ? "text-blue-500" : ""
-              }`}
-            >
-              دسته بندی مقالات
-              <span className="text-black text-opacity-50">
-                <Library />
-              </span>
-            </button>
-            {categoriesToggle && <CategoriesBox />}
-          </div> */}
-          <Link
-            href="/about-me"
-            className={`text-md font-bold sm:text-lg rounded-md p-0.5 transition-all duration-300 px-2.5 ${
-              pathname === "/about-me"
-                ? "text-gradient-primary hover:text-gradient-secondary"
-                : "text-gradient-secondary hover:text-gradient-primary"
-            }`}
-          >
-            من و وبسایتم !
-          </Link>
         </div>
       </PaddingContainer>
     </header>

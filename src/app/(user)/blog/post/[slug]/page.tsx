@@ -2,7 +2,7 @@ import PostHero from "@/components/post/PostHero";
 import { client } from "@/lib/sanity.client";
 import { groq } from "next-sanity";
 import React from "react";
-import { Post } from "../../../../../typing";
+import { Post } from "../../../../../../typing"; 
 import PaddingContainer from "@/components/layout/PaddingContainer";
 import PostBody from "@/components/post/PostBody";
 type Props = {
@@ -27,9 +27,10 @@ const PostPage = async ({ params: { slug } }: Props) => {
     {...,author->,categories[]->}
   `;
   const post: Post = await client.fetch(query, { slug });
- 
+
   return (
     <PaddingContainer>
+     
       <article className="py-5">
         <PostHero post={post} />
         {/* <CTACard/> */}

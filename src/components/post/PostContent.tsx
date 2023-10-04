@@ -1,10 +1,14 @@
+"use client"
 import React from "react";
-import { ChevronLeft, Dot } from "lucide-react";
+import { ChevronLeft, ChevronRight, Dot } from "lucide-react";
 
 import { Post, Category } from "@/../../typing";
 import { getReadingTime, getRelativeDate } from "@/lib/helpers";
 import urlFor from "@/lib/urlFor";
 import Image from "next/image";
+import BackButton from "../elements/BackButton";
+import { useRouter } from "next/navigation";
+
 interface PostContentProps {
   post: Post;
   isPostPage?: boolean;
@@ -20,16 +24,18 @@ const PostContent = ({
   isPostPage = false,
   layout = "horizontal",
 }: PostContentProps) => {
+  const router=useRouter()
   return (
     <div className="space-y-2">
       {/* tags */}
       <div
-        className={`text-[0.6rem] lg:text-[0.8rem] flex-wrap font-semibold flex justify-start items-center text-neutral-400 ${
+        className={`text-[0.6rem] lg:text-[0.8rem] flex-wrap flex justify-start items-center text-neutral-400 ${
           isPostPage ? "md:text-[100%]" : ""
         }`}
       >
+        {isPostPage && <BackButton />}
         {post.author && (
-          <div className="flex items-center justify-center gap-1">
+          <button title="نویسنده" onClick={()=>{router.push(`/about-me`)}} className="flex items-center font-semibold justify-center gap-1">
             <Image
               src={urlFor(post.author.image).url()}
               className={`object-center object-cover rounded-full ${
@@ -42,22 +48,24 @@ const PostContent = ({
             />
             <span>{post.author.name}</span>
             <Dot />
-          </div>
+          </button>
         )}
         {post?.categories &&
           post.categories.map((category: any) => (
             <>
-              <div
-                style={{color:category.color?category.color:"#333"}}
+              <button
+                onClick={()=>{router.push(`/blog?category=${category.title}`)}}
+                title="دسته بندی"
+                style={{ color: category.color ? category.color : "#333" }}
                 className={`font-bold`}
                 key={category._id}
               >
                 {category.title}
-              </div>
+              </button>
               <Dot />
             </>
           ))}
-          {/* {
+        {/* {
             post?.body&& <> <div>زمان مطالعه : {getReadingTime(post.body.toLocaleString()).split('').splice(0,2)}</div><Dot/></>
           } */}
         <div>

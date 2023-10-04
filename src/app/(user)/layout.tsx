@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/navigation/Footer";
+import MobileNav from "@/components/navigation/MobileNav";
 // import MobileNav from "@/components/navigation/MobileNav";
 export const metadata: Metadata = {
   title: "Rezcoding",

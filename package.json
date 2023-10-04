@@ -12,7 +12,6 @@
     "@portabletext/react": "^3.0.7",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.16.7",
-    "@types/clipboard": "^2.0.7",
     "@types/luxon": "^3.3.2",
     "lucide-react": "^0.279.0",
     "luxon": "^3.4.3",
@@ -21,6 +20,7 @@
     "react": "latest",
     "react-dom": "latest",
     "react-portable-text": "^0.6.0",
+    "react-query": "^3.39.3",
     "reading-time": "^1.5.0",
     "sanity": "^3.16.7",
     "typeit-react": "^2.6.4"

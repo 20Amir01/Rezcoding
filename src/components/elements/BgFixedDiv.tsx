@@ -23,6 +23,7 @@ const BannerDiv = styled.div<DivImageContainerProps>`
     max-height: 100dvh;
     background-attachment: fixed;
   }
+  position: relative;
   background-image: url(${(props) => props.imageURL});
   background-position: center;
   background-repeat: no-repeat;

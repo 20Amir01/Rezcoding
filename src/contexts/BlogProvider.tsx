@@ -1,32 +1,31 @@
-'use client'
+"use client";
 import React, { useReducer, createContext, useContext } from "react";
 
 interface InitialStateTypes {
-  mobileMenuDisplayToggle: boolean;
+  searchQuery: any;
 }
-
 const initialState: InitialStateTypes = {
-  mobileMenuDisplayToggle: false,
+  searchQuery: "",
 };
 
 type ActionType =
-  | { type: "mobile-menu-display/active" }
-  | { type: "mobile-menu-display/deactive" };
+  | { type: "search-query-set"; payload: string }
+  | { type: "search-query-clear" };
 
 const reducer = (
   state: InitialStateTypes,
   action: ActionType
 ): InitialStateTypes => {
   switch (action.type) {
-    case "mobile-menu-display/active":
+    case "search-query-set":
       return {
         ...state,
-        mobileMenuDisplayToggle: true,
+        searchQuery: action.payload,
       };
-    case "mobile-menu-display/deactive":
+    case "search-query-clear":
       return {
         ...state,
-        mobileMenuDisplayToggle: false,
+        searchQuery: "",
       };
     default:
       return state;

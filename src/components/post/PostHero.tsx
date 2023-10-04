@@ -14,7 +14,13 @@ const PostHero = ({ post }: PostHeroProps) => {
   return (
     <div className="w-full mx-auto space-y-5 mb-10">
       <PostContent isPostPage post={post} />
-      <Image src={urlFor(post.mainImage).url()} alt={post.title} className="w-full h-auto max-w-4xl mx-auto aspect-video rounded-md object-cover object-center" width={1280} height={500}/>
+      <Image
+        src={urlFor(post.mainImage).url()}
+        alt={post.title}
+        className="w-full h-auto max-w-4xl mx-auto aspect-video rounded-md object-cover object-center"
+        width={1280}
+        height={500}
+      />
     </div>
   );
 };

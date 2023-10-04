@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="py-8 from-white via-neutral-50 to-neutral-100 mt-10 bg-gradient-to-b">
+    <footer className="py-8 from-white via-white to-neutral-50 mt-10 bg-gradient-to-b">
       <PaddingContainer>
         {/* social links */}
         <div className="flex flex-col items-center justify-center gap-4 text-neutral-600 font-semibold">

@@ -65,6 +65,7 @@ interface Span {
 }
 interface Category extends Base {
   title: string;
+  slug: Slug;
   _updatedAt: string;
   _createdAt: string;
   _rev: string;
