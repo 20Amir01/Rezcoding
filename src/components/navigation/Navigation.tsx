@@ -36,14 +36,14 @@ const Navigation = () => {
                 {mobileMenuToggle ? <X /> : <Menu />}
               </button>
             </div>
-            <nav className="items-center justify-center gap-2 hidden sm:flex">
+            <nav className="items-center text-sm justify-center gap-2 hidden sm:flex">
               <NavLinks />
             </nav>
           </div>
         </div>
       </PaddingContainer>
       {mobileMenuToggle && (
-        <nav className="flex absolute top-full gap-2 right-0 bg-white  h-auto py-5 text-neutral-800 font-bold drop-shadow-lg justify-center items-center z-50 w-full sm:hidden flex-col">
+        <nav className="flex absolute text-md top-full gap-3 right-0 mobile-nav-anime bg-white h-auto py-6 text-neutral-800 font-bold drop-shadow-lg justify-center items-center z-50 w-full sm:hidden flex-col">
           <NavLinks />
         </nav>
       )}

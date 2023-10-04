@@ -6,14 +6,20 @@ const NavLinks = () => {
   const pathname = usePathname();
   return (
     <>
+          <Link
+        className={`sm:hidden ${pathname === "/" ? "text-blue-500" : ""}`}
+        href="/"
+      >
+       صفحه اصلی
+      </Link>
       <Link
-        className={`text-xl sm:text-sm ${pathname === "/blog" ? "text-blue-500" : ""}`}
+        className={`${pathname === "/blog" ? "text-blue-500" : ""}`}
         href="/blog"
       >
         وبلاگ
       </Link>
       <Link
-        className={`text-xl sm:text-sm ${pathname === "/about-me" ? "text-blue-500" : ""}`}
+        className={`${pathname === "/about-me" ? "text-blue-500" : ""}`}
         href="/about-me"
       >
         من کی ام ؟

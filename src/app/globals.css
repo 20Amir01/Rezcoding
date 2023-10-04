@@ -8,7 +8,7 @@ html {
 }
 
 .mobile-nav-anime {
-     animation: mobileNav 0.3s ease-out;
+     animation: mobileNav 0.2s ease-out;
 }
 
 .text-gradient-primary {
@@ -45,12 +45,10 @@ html {
 @keyframes mobileNav {
      from {
           opacity: 0;
-          transform: translateX(100px);
      }
 
      to {
           opacity: 1;
-          transform: translateX(0px);
      }
 }
 
