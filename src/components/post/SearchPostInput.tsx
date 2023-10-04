@@ -2,13 +2,15 @@
 import React, { useState } from "react";
 import { Search } from "lucide-react";
 import { useBlog } from "@/contexts/BlogProvider";
-import { type } from "os";
+
 const SearchPostInput = () => {
   const [searchInputValue, setSearchInputValue] = useState<string>("");
-  const { dispatch } = useBlog();
+  const { dispatch ,state:{searchQuery} } = useBlog();
   const handleSubmit = () => {
     if (!searchInputValue) dispatch({ type: "search-query-clear" });
-    dispatch({ type: "search-query-set", payload: searchInputValue});
+    if (!searchInputValue) return;
+    // dispatch({ type: "search-box-/close" });
+    dispatch({ type: "search-query-set", payload: searchInputValue });
   };
   return (
     <form
@@ -29,6 +31,8 @@ const SearchPostInput = () => {
         type="text"
         name=""
         id=""
+        defaultValue={searchQuery}
+        value={searchInputValue}
         onChange={(e) => setSearchInputValue(e.target.value)}
         placeholder="جستجو در وبلاگ"
         className="bg-white drop-shadow-md text-black border-none text-center rounded-l-md h-14 w-full sm:w-80 focus:outline-neutral-900"

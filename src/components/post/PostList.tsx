@@ -1,12 +1,13 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import PostCard from "./PostCard";
-import { Category, Post } from "../../../typing";
+import { Post } from "../../../typing";
 import getPosts from "@/helpers/getPosts";
 import { useQuery } from "react-query";
 import { useSearchParams } from "next/navigation";
 import { useBlog } from "@/contexts/BlogProvider";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Button from "../elements/Button";
 interface Props {
   posts: Post;
 }
@@ -49,13 +50,20 @@ const PostList = ({ posts }: Props) => {
       );
     });
   });
-
   const pagesCount = Math.ceil(filteredPosts?.length / 12);
   const indexOfLastPost = pageIndex * postCountPerPage;
   const indexOfFirstPost = indexOfLastPost - postCountPerPage;
   const currentPosts = filteredPosts?.slice(indexOfFirstPost, indexOfLastPost);
   return (
     <>
+      {searchQuery && (
+        <div className="flex items-center gap-5">
+          <p>
+            نتایج جستجوی شما برای :{" "}
+            <span className="text-neutral-600 border-b-2">{searchQuery}</span>
+          </p>
+        </div>
+      )}
       <div
         className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mx-auto`}
       >

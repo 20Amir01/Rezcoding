@@ -4,12 +4,15 @@ import Button from "../elements/Button";
 import { useAllCategories } from "@/hooks/useClientCustoms";
 import { Category } from "../../../typing";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useBlog } from "@/contexts/BlogProvider";
 
-const PostSearchFilterBox = () => {
-  const { data: categories } = useAllCategories();
+const PostSearchFilterBox = ({categories}:{categories:Category[]}) => {
   const [selectedCategory, setSelectedCategory] = useState("");
+  const {dispatch}=useBlog()
   const router = useRouter();
   const handleSubmit = () => {
+    dispatch({type:"category-box/close"})
+    dispatch({type:"search-query-clear"})
     if (!selectedCategory) return router.push("/blog");
     router.push(`?category=${selectedCategory}`);
   };

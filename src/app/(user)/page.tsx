@@ -1,6 +1,7 @@
+"use client";
 import ClientSideTypeIt from "@/components/ClientSideTypeIt";
 import BgFixedDiv from "@/components/elements/BgFixedDiv";
-import React from "react";
+import React, { useEffect } from "react";
 
 const HomePage = () => {
   return (
@@ -26,18 +27,14 @@ const HomePage = () => {
         banner
         imageURL="https://i.ibb.co/wcY820P/Grey-Minimalist-Tips-Blog-Banner.png"
       >
-        <div className="h-full w-full flex items-center justify-center">
-            2
-        </div>
+        <div className="h-full w-full flex items-center justify-center">2</div>
       </BgFixedDiv>
       <div className="bg-black h-80 w-full"></div>
       <BgFixedDiv
         banner
         imageURL="https://i.ibb.co/wcY820P/Grey-Minimalist-Tips-Blog-Banner.png"
       >
-        <div className="h-full w-full flex items-center justify-center">
-            3
-        </div>
+        <div className="h-full w-full flex items-center justify-center">3</div>
       </BgFixedDiv>
     </>
   );
