@@ -50,7 +50,7 @@ const PostList = ({ posts }: Props) => {
       );
     });
   });
-  const pagesCount = Math.ceil(filteredPosts?.length / 12);
+  const pagesCount = Math.ceil(filteredPosts?.length / 8);
   const indexOfLastPost = pageIndex * postCountPerPage;
   const indexOfFirstPost = indexOfLastPost - postCountPerPage;
   const currentPosts = filteredPosts?.slice(indexOfFirstPost, indexOfLastPost);
@@ -98,10 +98,11 @@ const PostList = ({ posts }: Props) => {
           >
             <ChevronLeft />
           </button>
-          <span>
-            {/* page : {pageIndex} of {pagesCount} */}
-            {`صحفه ${pageIndex} از ${pagesCount}`}
-          </span>
+          <div className="flex gap-2">
+            <span>{`${pageIndex}`}</span>
+            <span>از</span>
+            <span>{`${pagesCount}`}</span>
+          </div>
           <button
             className="bg-neutral-800 text-white rounded-full inline-flex items-center justify-center p-2"
             title="صفحه بعد"
