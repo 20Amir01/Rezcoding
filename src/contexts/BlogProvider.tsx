@@ -3,14 +3,20 @@ import React, { useReducer, createContext, useContext } from "react";
 
 interface InitialStateTypes {
   searchQuery: any;
+  pageIndex: number;
+  postCountPerPage: number;
 }
 const initialState: InitialStateTypes = {
   searchQuery: "",
+  pageIndex: 1,
+  postCountPerPage: 8,
 };
 
 type ActionType =
   | { type: "search-query-set"; payload: string }
-  | { type: "search-query-clear" };
+  | { type: "search-query-clear" }
+  | { type: "page-index/increament" , payload:number}
+  | { type: "page-index/decreament"  };
 
 const reducer = (
   state: InitialStateTypes,
@@ -26,6 +32,19 @@ const reducer = (
       return {
         ...state,
         searchQuery: "",
+      };
+    case "page-index/decreament":
+      return {
+        ...state,
+        pageIndex: state.pageIndex === 1 ? 1 : state.pageIndex - 1,
+      };
+    case "page-index/increament":
+      return {
+        ...state,
+        pageIndex:
+          state.pageIndex === action.payload
+            ? action.payload
+            : state.pageIndex + 1,
       };
     default:
       return state;
