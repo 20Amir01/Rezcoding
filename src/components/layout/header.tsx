@@ -1,12 +1,12 @@
 "use client";
 import Link from "next/link";
-import PaddingContainer from "../layout/PaddingContainer";
+import PaddingContainer from "./padding-container";
 // import { Library, Menu } from "lucide-react";
-import { useBlog } from "@/contexts/BlogProvider";
-import Logo from "../elements/Logo";
+import { useBlog } from "@/contexts/blog-provider";
+import Logo from "../elements/logo";
 // import CategoriesBox from "./CategoriesBox";
 import { usePathname } from "next/dist/client/components/navigation";
-import NavLinks from "./NavLinks";
+import NavLinks from "../navigation/nav-links";
 import { Menu, X } from "lucide-react";
 
 const Navigation = () => {

@@ -1,9 +1,8 @@
 import React from "react";
-import PaddingContainer from "@/components/layout/PaddingContainer";
+import PaddingContainer from "@/components/layout/padding-container";
 import { groq } from "next-sanity";
 import { client } from "@/lib/sanity.client";
-import PostBody from "@/components/post/PostBody";
-
+import PostBody from "@/components/post/post-body";
 
 const query = groq`
   *[_type == "author"]{
@@ -16,16 +15,12 @@ const query = groq`
   }
 }`;
 
-
-
 const AboutMePage = async () => {
-  const author = await client.fetch(query).then(data=>data.at(0));
+  const author = await client.fetch(query).then((data) => data.at(0));
   return (
-    
     <>
-      
       <PaddingContainer className="flex justify-center mt-10">
-       <PostBody value={author.bio}/>
+        <PostBody value={author.bio} />
       </PaddingContainer>
     </>
   );

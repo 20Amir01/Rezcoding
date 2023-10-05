@@ -1,9 +1,9 @@
 "use client"; // Error components must be Client Components
 
-import ClientSideRoute from "@/components/ClientSideRoute";
-import PaddingContainer from "@/components/layout/PaddingContainer";
-import Footer from "@/components/navigation/Footer";
-import Navigation from "@/components/navigation/Navigation";
+import ClientSideRoute from "@/helpers/client-side-route";
+import PaddingContainer from "@/components/layout/padding-container";
+import Footer from "@/components/layout/footer";
+import Navigation from "@/components/layout/header";
 import { useEffect } from "react";
 
 export default function Error({
@@ -19,19 +19,26 @@ export default function Error({
   }, [error]);
 
   return (
-
     <>
-      <Navigation/>
+      <Navigation />
       <PaddingContainer>
         <div className="flex flex-col justify-center items-center w-full gap-2 h-[100dvh] overflow-hidden">
           <p className="text-xl text-blue-500 font-bold">{error.name}</p>
-          <h1 className="text-xl text-blue-500 font-bold">مشکلی در دخواست شما به وجود آمده است !</h1>
-          <p dir="ltr" className="sm:text-lg text-sm font-semibold">{error.message}</p>
-          <ClientSideRoute className="text-md font-semibold text-white bg-blue-500 px-2.5 py-1 rounded-md" route="/">بازگشت به صفحه اصلی</ClientSideRoute>
+          <h1 className="text-xl text-blue-500 font-bold">
+            مشکلی در دخواست شما به وجود آمده است !
+          </h1>
+          <p dir="ltr" className="sm:text-lg text-sm font-semibold">
+            {error.message}
+          </p>
+          <ClientSideRoute
+            className="text-md font-semibold text-white bg-blue-500 px-2.5 py-1 rounded-md"
+            route="/"
+          >
+            بازگشت به صفحه اصلی
+          </ClientSideRoute>
         </div>
       </PaddingContainer>
-      <Footer/>
+      <Footer />
     </>
-  
   );
 }

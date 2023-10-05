@@ -1,10 +1,10 @@
-import PostHero from "@/components/post/PostHero";
+import PostHero from "@/components/post/post-hero";
 import { client } from "@/lib/sanity.client";
 import { groq } from "next-sanity";
 import React from "react";
-import { Post } from "../../../../../../typing"; 
-import PaddingContainer from "@/components/layout/PaddingContainer";
-import PostBody from "@/components/post/PostBody";
+import { Post } from "../../../../../../typing";
+import PaddingContainer from "@/components/layout/padding-container";
+import PostBody from "@/components/post/post-body";
 type Props = {
   params: { slug: string };
 };
@@ -30,7 +30,6 @@ const PostPage = async ({ params: { slug } }: Props) => {
 
   return (
     <PaddingContainer>
-     
       <article className="py-5">
         <PostHero post={post} />
         {/* <CTACard/> */}

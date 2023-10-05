@@ -1,11 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import { Search } from "lucide-react";
-import { useBlog } from "@/contexts/BlogProvider";
+import { useBlog } from "@/contexts/blog-provider";
 
 const SearchPostInput = () => {
   const [searchInputValue, setSearchInputValue] = useState<string>("");
-  const { dispatch ,state:{searchQuery} } = useBlog();
+  const {
+    dispatch,
+    state: { searchQuery },
+  } = useBlog();
   const handleSubmit = () => {
     if (!searchInputValue) dispatch({ type: "search-query-clear" });
     if (!searchInputValue) return;

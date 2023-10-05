@@ -1,12 +1,12 @@
-"use client"
+"use client";
 import React from "react";
 import { ChevronLeft, ChevronRight, Dot } from "lucide-react";
 
 import { Post, Category } from "@/../../typing";
 import { getReadingTime, getRelativeDate } from "@/lib/helpers";
-import urlFor from "@/lib/urlFor";
+import urlFor from "@/lib/url-for";
 import Image from "next/image";
-import BackButton from "../elements/BackButton";
+import BackButton from "../elements/back-button";
 import { useRouter } from "next/navigation";
 
 interface PostContentProps {
@@ -24,7 +24,7 @@ const PostContent = ({
   isPostPage = false,
   layout = "horizontal",
 }: PostContentProps) => {
-  const router=useRouter()
+  const router = useRouter();
   return (
     <div className="space-y-2">
       {/* tags */}
@@ -35,7 +35,13 @@ const PostContent = ({
       >
         {isPostPage && <BackButton />}
         {post.author && (
-          <button title="نویسنده" onClick={()=>{router.push(`/about-me`)}} className="flex items-center font-semibold justify-center gap-1">
+          <button
+            title="نویسنده"
+            onClick={() => {
+              router.push(`/about-me`);
+            }}
+            className="flex items-center font-semibold justify-center gap-1"
+          >
             <Image
               src={urlFor(post.author.image).url()}
               className={`object-center object-cover rounded-full ${
@@ -54,7 +60,9 @@ const PostContent = ({
           post.categories.map((category: any) => (
             <>
               <button
-                onClick={()=>{router.push(`/blog?category=${category.title}`)}}
+                onClick={() => {
+                  router.push(`/blog?category=${category.title}`);
+                }}
                 title="دسته بندی"
                 style={{ color: category.color ? category.color : "#333" }}
                 className={`font-bold`}

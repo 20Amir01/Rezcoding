@@ -1,9 +1,9 @@
 import BlogPageTitle from "@/components/blog/blog-page-title";
-import PaddingContainer from "@/components/layout/PaddingContainer";
-import PostList from "@/components/post/PostList";
-import PostSearchBar from "@/components/post/PostSearchBar";
-import getCategories from "@/helpers/getCategories";
-import getPosts from "@/helpers/getPosts";
+import PaddingContainer from "@/components/layout/padding-container";
+import PostList from "@/components/post/post-list";
+import PostSearchBar from "@/components/blog/blog-header";
+import getCategories from "@/helpers/get-categories";
+import getPosts from "@/helpers/get-posts";
 export const revalidate = 30;
 export default async function BlogPage() {
   const posts = await getPosts();
@@ -15,9 +15,9 @@ export default async function BlogPage() {
       </div>
       <PaddingContainer>
         <main className="space-y-10 mt-16 relative">
-          <p className="text-xl font-semibold inline-flex gap-2">
+          <div className="text-xl font-semibold inline-flex gap-2">
             <BlogPageTitle categories={categories} />
-          </p>
+          </div>
           {posts.length > 0 ? (
             <>
               <PostList posts={posts} />

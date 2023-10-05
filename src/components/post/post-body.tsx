@@ -1,7 +1,7 @@
 import React from "react";
 import { Block } from "../../../typing";
 import { PortableText } from "@portabletext/react";
-import RichTextComponents from "./RichTextComponents";
+import RichTextComponents from "./rich-text-components";
 interface BodyProps {
   value: Block[];
 }

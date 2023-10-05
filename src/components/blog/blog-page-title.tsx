@@ -1,9 +1,8 @@
 "use client";
 
-import { useAllCategories } from "@/hooks/useClientCustoms";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Category } from "../../../typing";
-import getCategories from "@/helpers/getCategories";
+import getCategories from "@/helpers/get-categories";
 import { useQuery } from "react-query";
 
 const BlogPageTitle = ({ categories }: { categories: Category[] }) => {
@@ -16,7 +15,7 @@ const BlogPageTitle = ({ categories }: { categories: Category[] }) => {
   return (
     <>
       {searchParams?.has("category") ? (
-        <h1 className="inline-flex gap-1 text-sm text-neutral-800">
+        <p className="inline-flex gap-1 text-sm text-neutral-800">
           <span>دسته بندی ها</span>
           <span>/</span>
           <span>
@@ -24,9 +23,9 @@ const BlogPageTitle = ({ categories }: { categories: Category[] }) => {
               (item: Category) => item.title === searchParams.get("category")
             ).length > 0 && searchParams.get("category")}
           </span>
-        </h1>
+        </p>
       ) : (
-        <h1 className="text-sm text-neutral-800">تمامی مقالات</h1>
+        <p className="text-sm text-neutral-800">تمامی مقالات</p>
       )}
     </>
   );

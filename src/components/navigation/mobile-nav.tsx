@@ -2,7 +2,7 @@
 import { X } from "lucide-react";
 import React from "react";
 import Navlinks from "../categories/CategoryOptions";
-import { useBlog } from "@/contexts/BlogProvider";
+import { useBlog } from "@/contexts/blog-provider";
 
 const MobileNav = () => {
   const { state, dispatch } = useBlog();

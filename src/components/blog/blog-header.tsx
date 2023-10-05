@@ -1,13 +1,13 @@
 "use client";
 import { ChevronDown, Library, Search, Trash2 } from "lucide-react";
 import React, { useContext, useEffect, useState } from "react";
-import Button from "../elements/Button";
-import PostSearchFilterBox from "./PostSearchFilterBox";
-import SearchPostInput from "./SearchPostInput";
-import PaddingContainer from "../layout/PaddingContainer";
+import Button from "../elements/custom-button";
+import PostSearchFilterBox from "./blog-category-filter-box";
+import SearchPostInput from "./blog-search-input";
+import PaddingContainer from "../layout/padding-container";
 import { useQuery } from "react-query";
-import getCategories from "@/helpers/getCategories";
-import { useBlog } from "@/contexts/BlogProvider";
+import getCategories from "@/helpers/get-categories";
+import { useBlog } from "@/contexts/blog-provider";
 
 const PostSearchBar = ({ categories }: { categories: [] }) => {
   const { data: categoriesData } = useQuery({
@@ -44,7 +44,7 @@ const PostSearchBar = ({ categories }: { categories: [] }) => {
               title="پاک کردن جستجو"
               onClick={() => dispatch({ type: "search-query-clear" })}
             >
-              <Trash2 size={16}/>
+              <Trash2 size={16} />
             </Button>
           )}
         </div>

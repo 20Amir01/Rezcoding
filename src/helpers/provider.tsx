@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import BlogProvider from "../contexts/BlogProvider";
+import BlogProvider from "../contexts/blog-provider";
 
 const Provider = ({ children }: { children: React.ReactNode }) => {
   return <BlogProvider>{children}</BlogProvider>;

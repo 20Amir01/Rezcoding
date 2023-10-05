@@ -1,7 +1,7 @@
 import React from "react";
-import PaddingContainer from "../layout/PaddingContainer";
+import PaddingContainer from "./padding-container";
 
-import SocialLink from "../elements/SocialLink";
+import SocialLink from "../elements/social-link";
 import siteConfig from "@/config/site";
 import { ChevronDown } from "lucide-react";
 
@@ -27,7 +27,7 @@ const Footer = () => {
             </div>
             <div className="text-center flex flex-col items-center">
               <p>راه های ارتباط با من</p>
-              <ChevronDown className="animate-bounce"/>
+              <ChevronDown className="animate-bounce" />
             </div>
             <div className="flex justify-center gap-2">
               <SocialLink

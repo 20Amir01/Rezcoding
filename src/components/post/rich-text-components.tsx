@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import urlFor from "@/lib/urlFor";
-import CodeBlock from "../elements/CodeBlock";
+import urlFor from "@/lib/url-for";
+import CodeBlock from "../elements/code-block";
 const RichTextComponents = {
   types: {
     image: ({ value }: any) => (
@@ -20,7 +20,7 @@ const RichTextComponents = {
         ) : value.ads && !value.link ? (
           <Link prefetch={false} href={value?.ads}>
             <p className="absolute top-0 right-5 bg-neutral-800 rounded-b-lg text-sm p-1 text-neutral-400">
-             <span className="animate-pulse">تبلیغات</span>
+              <span className="animate-pulse">تبلیغات</span>
             </p>
             <Image
               className="max-w-full h-auto my-5 mx-auto rounded-md"

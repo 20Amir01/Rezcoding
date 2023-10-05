@@ -1,10 +1,10 @@
 import React from "react";
 
-import PostContent from "./PostContent";
+import PostContent from "./post-content";
 // import PaddingContainer from "../layout/PaddingContainer";
 import { Post } from "../../../typing";
 import Image from "next/image";
-import urlFor from "@/lib/urlFor";
+import urlFor from "@/lib/url-for";
 // import Image from "next/image";
 
 interface PostHeroProps {

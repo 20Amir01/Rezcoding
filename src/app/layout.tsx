@@ -1,8 +1,8 @@
-import Provider from "@/components/Provider";
+import Provider from "@/helpers/provider";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Noto_Sans_Arabic, Markazi_Text } from "next/font/google";
-import ReactQueryClientProvider from "@/lib/ReactQueryClientProvider";
+import ReactQueryClientProvider from "@/lib/react-query-client-provider";
 export const FONT_PRIMARY = Noto_Sans_Arabic({ subsets: ["arabic"] });
 
 export const metadata: Metadata = {

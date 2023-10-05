@@ -1,10 +1,10 @@
 // import Image from "next/image";
 import React from "react";
-import PostContent from "./PostContent";
+import PostContent from "./post-content";
 import { Post } from "../../../typing";
 import Image from "next/image";
-import urlFor from "@/lib/urlFor";
-import ClientSideRoute from "../ClientSideRoute";
+import urlFor from "@/lib/url-for";
+import ClientSideRoute from "../../helpers/client-side-route";
 
 interface PostProps {
   post: Post;

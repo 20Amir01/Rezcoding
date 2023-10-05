@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
-import Navigation from "@/components/navigation/Navigation";
-import Footer from "@/components/navigation/Footer";
-import MobileNav from "@/components/navigation/MobileNav";
+import Navigation from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
+import MobileNav from "@/components/navigation/mobile-nav";
 // import MobileNav from "@/components/navigation/MobileNav";
 export const metadata: Metadata = {
   title: "Rezcoding",
@@ -16,15 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-      <div className="user w-full h-full">
-     
-          <Navigation />
-          {/* <MobileNav /> */}
+    <div className="user w-full h-full">
+      <Navigation />
+      {/* <MobileNav /> */}
 
-            {children}
-    
-          <Footer />
-        
-      </div>
+      {children}
+
+      <Footer />
+    </div>
   );
 }

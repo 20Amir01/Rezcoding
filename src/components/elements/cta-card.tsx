@@ -1,6 +1,6 @@
 // import Link from "next/link";
 import React from "react";
-import Logo from "./Logo";
+import Logo from "./logo";
 
 const CTACard = () => {
   return (
@@ -11,7 +11,7 @@ const CTACard = () => {
       {/* <Image fill src="" alt="CTA card image" className="object-center object-cover"/> */}
       {/* content container */}
       <div className="relative z-20 space-y-2">
-        <Logo/>
+        <Logo />
         <div className="text-lg font-medium">
           <h3 className="text-2xl font-semibold">Expolore world with me</h3>
           <p className="max-w-lg text-lg mt-2">
