@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import urlFor from "@/lib/url-for";
-import CodeBlock from "../elements/code-block";
+import CodeBlock from "../components/elements/code-block";
 const RichTextComponents = {
   types: {
     image: ({ value }: any) => (
