@@ -25,7 +25,7 @@ const PostSearchBar = ({ categories }: { categories: [] }) => {
   }, [categoryBoxToggle, searchBoxToggle, dispatch]);
 
   return (
-    <PaddingContainer className="absolute top-[50%] right-0 left-0">
+    <PaddingContainer className="absolute top-[50%] right-0 left-0 z-0">
       <div className="flex w-full flex-row-reverse items-center justify-between gap-1 bg-white rounded-md relative z-20 px-2.5 py-5 drop-shadow-md">
         <div className="flex gap-1 flex-row-reverse h-full">
           <Button

@@ -10,8 +10,8 @@ export default async function BlogPage() {
   const categories = await getCategories();
   return (
     <>
-      <div className="h-20 relative bg-neutral-800">
-        <PostSearchBar categories={categories} />
+      <div className="h-20 relative bg-neutral-800 z-0">
+        <PostSearchBar categories={categories}/>
       </div>
       <PaddingContainer>
         <main className="space-y-10 mt-16 relative">

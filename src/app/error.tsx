@@ -22,7 +22,7 @@ export default function Error({
     <>
       <Navigation />
       <PaddingContainer>
-        <div className="flex flex-col justify-center items-center w-full gap-2 h-[100dvh] overflow-hidden">
+        <div className="flex flex-col justify-center items-center w-full gap-2 h-[100dvh] overflow-hidden text-center">
           <p className="text-xl text-blue-500 font-bold">{error.name}</p>
           <h1 className="text-xl text-blue-500 font-bold">
             مشکلی در دخواست شما به وجود آمده است !

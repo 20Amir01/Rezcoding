@@ -61,7 +61,7 @@ html {
 }
 
 .mobile-nav-anime {
-     animation: mobileNav 0.5s ease-out;
+     animation: mobileNav 0.65s ease-out;
 }
 
 @keyframes mobileNav {
