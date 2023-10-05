@@ -29,12 +29,10 @@ const PostPage = async ({ params: { slug } }: Props) => {
   const post: Post = await client.fetch(query, { slug });
 
   return (
-    <PaddingContainer>
-      <article className="py-5">
+    <PaddingContainer className="py-5">
         <PostHero post={post} />
         {/* <CTACard/> */}
         <PostBody value={post.body} />
-      </article>
     </PaddingContainer>
   );
 };

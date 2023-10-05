@@ -5,6 +5,7 @@ import { Post } from "../../../typing";
 import Image from "next/image";
 import urlFor from "@/lib/url-for";
 import ClientSideRoute from "../../helpers/client-side-route";
+import Link from "next/link";
 
 interface PostProps {
   post: Post;
@@ -18,8 +19,8 @@ const PostCard = ({
   reverse = false,
 }: PostProps) => {
   return (
-    <ClientSideRoute
-      route={`blog/post/${post.slug.current}`}
+    <Link
+      href={`blog/post/${post.slug.current}`}
       className={`px-2.5 py-10 rounded-md gap-2 bg-white shadow-sm ${
         layout === "horizontal"
           ? `grid grid-cols-1 sm:gap-5 sm:grid-cols-2 md:gap-5 md:px-5 justify-center items-center sm:col-span-2 md:col-span-3  `
@@ -38,7 +39,7 @@ const PostCard = ({
       />
       {/* post content */}
       <PostContent post={post} layout={layout} />
-    </ClientSideRoute>
+    </Link>
   );
 };
 

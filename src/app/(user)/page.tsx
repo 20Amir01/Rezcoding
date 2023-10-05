@@ -1,36 +1,39 @@
 "use client";
-import ClientSideTypeIt from "@/helpers/client-side-type-it";
 import BgFixedDiv from "@/components/elements/background-fixed-div";
-import React, { useEffect } from "react";
+import { Source_Code_Pro } from "next/font/google";
+import PaddingContainer from "@/components/layout/padding-container";
+import test from "../../../public/paper.jpg";
+import Header from "@/components/layout/header";
+console.log(test);
 
+export const CODE_FONT = Source_Code_Pro({ weight: "500", subsets: ["latin"] });
 const HomePage = () => {
   return (
     <>
-      <BgFixedDiv
-        banner
-        imageURL="https://i.ibb.co/wcY820P/Grey-Minimalist-Tips-Blog-Banner.png"
-      >
-        <div className="h-full w-full flex flex-col items-center justify-center">
-          <ClientSideTypeIt
-            className="text-sm sm:text-3xl md:text-4xl lg:text-5xl z-10 text-neutral-100 font-bold [text-shadow:_0_3px_1px_black]"
-            options={{
-              speed: 100,
-              waitUntilVisible: true,
-            }}
-          >
-            واقعا همه می تونن برنامه نویس بشن ؟🤔
-          </ClientSideTypeIt>
-          <ClientSideTypeIt
-            className="text-sm sm:text-3xl md:text-4xl lg:text-5xl z-10 text-neutral-100 font-bold [text-shadow:_0_3px_1px_black]"
-            options={{
-              speed: 100,
-              waitUntilVisible: true,
-            }}
-          >
-            واقعا همه می تونن برنامه نویس بشن ؟🤔
-          </ClientSideTypeIt>
-        </div>
+      <BgFixedDiv banner imageURL={`${test.src}`}>
+
       </BgFixedDiv>
+      <div className="w-full h-auto py-10 flex items-center justify-center bg-neutral-50">
+        <PaddingContainer className="w-full h-full grid grid-cols-1 md:grid-cols-3 items-center gap-5 sm:gap-10 justify-center">
+          <div className="bg-red-500 w-full h-auto aspect-square rounded-md"></div>
+          <div className="bg-red-500 w-full h-auto aspect-square rounded-md"></div>
+          <div className="bg-red-500 w-full h-auto aspect-square rounded-md"></div>
+        </PaddingContainer>
+      </div>
+      <div className="w-full h-auto py-10 flex items-center justify-center bg-black">
+        <PaddingContainer className="w-full h-full grid grid-cols-1 md:grid-cols-3 items-center gap-5 sm:gap-10 justify-center">
+          <div className="bg-red-500 w-full h-auto aspect-square rounded-md"></div>
+          <div className="bg-red-500 w-full h-auto aspect-square rounded-md"></div>
+          <div className="bg-red-500 w-full h-auto aspect-square rounded-md"></div>
+        </PaddingContainer>
+      </div>
+      <div className="w-full h-auto py-10 flex items-center justify-center bg-neutral-50">
+        <PaddingContainer className="w-full h-full grid grid-cols-1 md:grid-cols-3 items-center gap-5 sm:gap-10 justify-center">
+          <div className="bg-red-500 w-full h-auto aspect-square rounded-md"></div>
+          <div className="bg-red-500 w-full h-auto aspect-square rounded-md"></div>
+          <div className="bg-red-500 w-full h-auto aspect-square rounded-md"></div>
+        </PaddingContainer>
+      </div>
     </>
   );
 };

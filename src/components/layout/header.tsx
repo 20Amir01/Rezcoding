@@ -1,15 +1,12 @@
 "use client";
 import Link from "next/link";
 import PaddingContainer from "./padding-container";
-// import { Library, Menu } from "lucide-react";
 import { useBlog } from "@/contexts/blog-provider";
 import Logo from "../elements/logo";
-// import CategoriesBox from "./CategoriesBox";
-import { usePathname } from "next/dist/client/components/navigation";
 import NavLinks from "../navigation/nav-links";
 import { Menu, X } from "lucide-react";
-
-const Navigation = () => {
+import { useEffect,useState } from "react";
+const Header = ({ homePage = false }: { homePage?: boolean }) => {
   const {
     state: { mobileMenuToggle },
     dispatch,
@@ -17,9 +14,31 @@ const Navigation = () => {
   const handleMobileMenuBtnClick = () => {
     dispatch({ type: "mobile-menu/toggle" });
   };
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollPrevPosition, setScrollPosition] = useState(0);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (scrollY === scrollPrevPosition || scrollY > scrollPrevPosition) {
+        setIsScrolled(false);
+      } else {
+        setIsScrolled(true);
+      }
+      setScrollPosition(scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollPrevPosition]);
+
   return (
     <header
-      className={`sticky transition-all navigation-anime top-0 left-0 right-0 bg-white bg-opacity-80 backdrop-blur-sm z-30`}
+      className={`transition-all bg-white drop-shadow navigation-anime top-0 left-0 right-0 ${
+        isScrolled ? "sticky header-anime" : "static"
+      } z-30`}
     >
       <PaddingContainer>
         <div className="py-5 flex items-center justify-between flex-row-reverse relative">
@@ -50,4 +69,4 @@ const Navigation = () => {
     </header>
   );
 };
-export default Navigation;
+export default Header;
