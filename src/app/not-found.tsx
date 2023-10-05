@@ -1,6 +1,6 @@
 import PaddingContainer from "@/components/layout/padding-container";
 import Footer from "@/components/layout/footer";
-import Navigation from "@/components/layout/header";
+import Navigation from "@/components/navigation/header";
 import Link from "next/link";
 
 const NotFound = () => {

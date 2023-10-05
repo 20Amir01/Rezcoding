@@ -3,7 +3,7 @@ import BgFixedDiv from "@/components/elements/background-fixed-div";
 import { Source_Code_Pro } from "next/font/google";
 import PaddingContainer from "@/components/layout/padding-container";
 import test from "../../../public/paper.jpg";
-import Header from "@/components/layout/header";
+import Header from "@/components/navigation/header";
 console.log(test);
 
 export const CODE_FONT = Source_Code_Pro({ weight: "500", subsets: ["latin"] });
@@ -12,6 +12,11 @@ const HomePage = () => {
     <>
       <BgFixedDiv banner imageURL={`${test.src}`}>
         <Header homePage />
+        <PaddingContainer className="h-full w-full">
+          <div className="w-full h-full flex justify-center items-center">
+            Code
+          </div>
+        </PaddingContainer>
       </BgFixedDiv>
       <div className="w-full h-auto py-10 flex items-center justify-center bg-neutral-50">
         <PaddingContainer className="w-full h-full grid grid-cols-1 md:grid-cols-3 items-center gap-5 sm:gap-10 justify-center">

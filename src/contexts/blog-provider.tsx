@@ -23,7 +23,8 @@ type ActionType =
   | { type: "search-query-clear" }
   | { type: "page-index/increament"; payload: number }
   | { type: "page-index/decreament" }
-  | { type: "mobile-menu/toggle" }
+  | { type: "mobile-menu/open" }
+  | { type: "mobile-menu/close" }
   | { type: "search-box-/toggle" }
   | { type: "search-box-/open" }
   | { type: "search-box-/close" }
@@ -59,10 +60,15 @@ const reducer = (
             ? action.payload
             : state.pageIndex + 1,
       };
-    case "mobile-menu/toggle":
+    case "mobile-menu/open":
       return {
         ...state,
-        mobileMenuToggle: !state.mobileMenuToggle,
+        mobileMenuToggle: true,
+      };
+    case "mobile-menu/close":
+      return {
+        ...state,
+        mobileMenuToggle: false,
       };
     case "search-box-/toggle": {
       return {

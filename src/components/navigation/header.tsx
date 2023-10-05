@@ -1,19 +1,13 @@
 "use client";
 import Link from "next/link";
-import PaddingContainer from "./padding-container";
+import PaddingContainer from "../layout/padding-container";
 import { useBlog } from "@/contexts/blog-provider";
 import Logo from "../elements/logo";
-import NavLinks from "../navigation/nav-links";
+import NavLinks from "./nav-links";
 import { ChevronUp, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 const Header = ({ homePage = false }: { homePage?: boolean }) => {
-  const {
-    state: { mobileMenuToggle },
-    dispatch,
-  } = useBlog();
-  const handleMobileMenuBtnClick = () => {
-    dispatch({ type: "mobile-menu/toggle" });
-  };
+  const { dispatch } = useBlog();
   const [isScrolledToTop, setIsScrolledToTop] = useState(false);
   const [scrollPrevPosition, setScrollPosition] = useState(0);
   useEffect(() => {
@@ -33,13 +27,12 @@ const Header = ({ homePage = false }: { homePage?: boolean }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [scrollPrevPosition]);
-
   return (
     <>
       <header
         className={`transition-all ${
           homePage ? "" : "bg-white"
-        } drop-shadow ${mobileMenuToggle&&"bg-white"} navigation-anime transition-all top-0 left-0 right-0 z-50 ${
+        } drop-shadow navigation-anime transition-all top-0 left-0 right-0 z-50 ${
           isScrolledToTop
             ? homePage
               ? `fixed header-anime ${scrollPrevPosition > 0 && `bg-white`}`
@@ -56,10 +49,12 @@ const Header = ({ homePage = false }: { homePage?: boolean }) => {
               <div className="md:hidden flex items-center">
                 <button
                   className="sm:hidden"
-                  onClick={handleMobileMenuBtnClick}
+                  onClick={() => {
+                    dispatch({ type: "mobile-menu/open" });
+                  }}
                   title="menu"
                 >
-                  {mobileMenuToggle ? <X size={32} /> : <Menu size={32} />}
+                  <Menu size={32} />
                 </button>
               </div>
               <nav className="items-center text-sm justify-center gap-2 hidden sm:flex">
@@ -68,11 +63,6 @@ const Header = ({ homePage = false }: { homePage?: boolean }) => {
             </div>
           </div>
         </PaddingContainer>
-        {mobileMenuToggle && (
-          <nav className="flex z-50 absolute text-md top-full gap-3 mobile-nav-anime right-0 transition-all bg-white h-auto py-6 text-neutral-800 font-bold drop-shadow-lg justify-center items-center w-full sm:hidden flex-col">
-            <NavLinks />
-          </nav>
-        )}
       </header>
       {scrollPrevPosition > 100 && isScrolledToTop && (
         <a

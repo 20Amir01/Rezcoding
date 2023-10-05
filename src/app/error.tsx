@@ -3,7 +3,7 @@
 import ClientSideRoute from "@/helpers/client-side-route";
 import PaddingContainer from "@/components/layout/padding-container";
 import Footer from "@/components/layout/footer";
-import Navigation from "@/components/layout/header";
+import Navigation from "@/components/navigation/header";
 import { useEffect } from "react";
 
 export default function Error({
