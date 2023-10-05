@@ -82,12 +82,12 @@ html {
 
 @keyframes header {
      from {
-          opacity: 0;
-          transform: translateY(-10px);
+          /* opacity: 0.5; */
+          transform: translateY(-50px);
      }
 
      to {
-          opacity: 1;
+          /* opacity: 1; */
           transform: translateY(0);
      }
 }

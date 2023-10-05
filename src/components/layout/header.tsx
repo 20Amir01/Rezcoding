@@ -68,11 +68,11 @@ const Header = ({ homePage = false }: { homePage?: boolean }) => {
           </nav>
         )}
       </header>
-      {isScrolledToTop && (
+      {scrollPrevPosition>100 && isScrolledToTop&& (
         <a
           href="#"
           title="برو به بالا"
-          className="z-40 fixed right-5 bottom-10 bg-neutral-200 drop-shadow-md p-3 rounded-full to-top-button-anime"
+          className="z-40 fixed right-5 bottom-10 bg-white text-neutral-900 drop-shadow-lg p-3 rounded-full to-top-button-anime"
         >
           <ChevronUp />
         </a>
