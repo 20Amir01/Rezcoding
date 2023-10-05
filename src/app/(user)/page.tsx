@@ -11,7 +11,7 @@ const HomePage = () => {
   return (
     <>
       <BgFixedDiv banner imageURL={`${test.src}`}>
-        <Header homePage />
+        {/* <Header homePage /> */}
         <PaddingContainer className="h-full w-full">
           <div className="w-full h-full flex justify-center items-center">
             Code

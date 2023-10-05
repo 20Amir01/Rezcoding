@@ -6,6 +6,12 @@ import Logo from "../elements/logo";
 import NavLinks from "./nav-links";
 import { ChevronUp, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { Noto_Nastaliq_Urdu } from "next/font/google";
+const nastalig_font = Noto_Nastaliq_Urdu({
+  weight: "400",
+  subsets: ["arabic"],
+});
 const Header = ({ homePage = false }: { homePage?: boolean }) => {
   const { dispatch } = useBlog();
   const [isScrolledToTop, setIsScrolledToTop] = useState(false);
@@ -27,6 +33,7 @@ const Header = ({ homePage = false }: { homePage?: boolean }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [scrollPrevPosition]);
+  const pathname=usePathname()
   return (
     <>
       <header
@@ -57,8 +64,8 @@ const Header = ({ homePage = false }: { homePage?: boolean }) => {
                   <Menu size={32} />
                 </button>
               </div>
-              <nav className="items-center text-sm justify-center gap-2 hidden sm:flex">
-                <NavLinks />
+              <nav className={`items-center text-sm justify-center gap-2 hidden sm:flex ${pathname==="/"?nastalig_font.className+" sm:text-lg":""}`}>
+                <NavLinks/>
               </nav>
             </div>
           </div>

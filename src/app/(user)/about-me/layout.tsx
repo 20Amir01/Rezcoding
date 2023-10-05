@@ -4,7 +4,7 @@ import Header from "@/components/navigation/header";
 const AboutPageLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {children}
     </>
   );

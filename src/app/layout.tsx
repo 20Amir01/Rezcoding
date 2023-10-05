@@ -22,7 +22,7 @@ export default function RootLayout({
       dir="rtl"
       className="selection:text-neutral-100 selection:bg-neutral-700"
     >
-      <body className={`${FONT_PRIMARY.className} bg-neutral-50`}>
+      <body className={`${FONT_PRIMARY.className} bg-neutral-50 sm:overflow-auto`}>
         <ReactQueryClientProvider>
           <Provider>{children}</Provider>
         </ReactQueryClientProvider>
