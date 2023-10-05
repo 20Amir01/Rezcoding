@@ -44,6 +44,22 @@ html {
      }
 }
 
+.to-top-button-anime {
+     animation: toTopButton 0.5s ease-out;
+}
+
+@keyframes toTopButton {
+     from {
+          opacity: 0;
+          transform: translateY(5px);
+     }
+
+     to {
+          opacity: 1;
+          transform: translateY(0);
+     }
+}
+
 .mobile-nav-anime {
      animation: mobileNav 0.5s ease-out;
 }
@@ -51,10 +67,12 @@ html {
 @keyframes mobileNav {
      from {
           opacity: 0;
+          /* transform: translateY(5px); */
      }
 
      to {
           opacity: 1;
+          /* transform: translateY(0); */
      }
 }
 

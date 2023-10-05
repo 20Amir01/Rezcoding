@@ -4,8 +4,8 @@ import PaddingContainer from "./padding-container";
 import { useBlog } from "@/contexts/blog-provider";
 import Logo from "../elements/logo";
 import NavLinks from "../navigation/nav-links";
-import { Menu, X } from "lucide-react";
-import { useEffect,useState } from "react";
+import { ChevronUp, Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 const Header = ({ homePage = false }: { homePage?: boolean }) => {
   const {
     state: { mobileMenuToggle },
@@ -14,15 +14,15 @@ const Header = ({ homePage = false }: { homePage?: boolean }) => {
   const handleMobileMenuBtnClick = () => {
     dispatch({ type: "mobile-menu/toggle" });
   };
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolledToTop, setIsScrolledToTop] = useState(false);
   const [scrollPrevPosition, setScrollPosition] = useState(0);
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       if (scrollY === scrollPrevPosition || scrollY > scrollPrevPosition) {
-        setIsScrolled(false);
+        setIsScrolledToTop(false);
       } else {
-        setIsScrolled(true);
+        setIsScrolledToTop(true);
       }
       setScrollPosition(scrollY);
     };
@@ -35,38 +35,49 @@ const Header = ({ homePage = false }: { homePage?: boolean }) => {
   }, [scrollPrevPosition]);
 
   return (
-    <header
-      className={`transition-all bg-white drop-shadow navigation-anime top-0 left-0 right-0 ${
-        isScrolled ? "sticky header-anime" : "static"
-      } z-30`}
-    >
-      <PaddingContainer>
-        <div className="py-5 flex items-center justify-between flex-row-reverse relative">
-          <Link className="font-bold text-lg" href="/">
-            <Logo />
-          </Link>
-          <div className="flex items-center gap-1.5 font-semibold text-neutral-700">
-            <div className="md:hidden flex items-center">
-              <button
-                className="sm:hidden"
-                onClick={handleMobileMenuBtnClick}
-                title="menu"
-              >
-                {mobileMenuToggle ? <X /> : <Menu />}
-              </button>
+    <>
+      <header
+        className={`transition-all bg-white drop-shadow navigation-anime top-0 left-0 right-0 z-50 ${
+          isScrolledToTop ? "sticky header-anime" : "static"
+        } z-30`}
+      >
+        <PaddingContainer>
+          <div className="py-5 flex items-center justify-between flex-row-reverse relative">
+            <Link className="font-bold text-lg" href="/">
+              <Logo />
+            </Link>
+            <div className="flex items-center gap-1.5 font-semibold text-neutral-700">
+              <div className="md:hidden flex items-center">
+                <button
+                  className="sm:hidden"
+                  onClick={handleMobileMenuBtnClick}
+                  title="menu"
+                >
+                  {mobileMenuToggle ? <X size={32}/> : <Menu size={32}/>}
+                </button>
+              </div>
+              <nav className="items-center text-sm justify-center gap-2 hidden sm:flex">
+                <NavLinks />
+              </nav>
             </div>
-            <nav className="items-center text-sm justify-center gap-2 hidden sm:flex">
-              <NavLinks />
-            </nav>
           </div>
-        </div>
-      </PaddingContainer>
-      {mobileMenuToggle && (
-        <nav className="flex absolute text-md top-full gap-3 right-0 mobile-nav-anime bg-white h-auto py-6 text-neutral-800 font-bold drop-shadow-lg justify-center items-center z-50 w-full sm:hidden flex-col">
-          <NavLinks />
-        </nav>
+        </PaddingContainer>
+        {mobileMenuToggle && (
+          <nav className="flex z-40 absolute text-md top-full gap-3 right-0 mobile-nav-anime bg-white h-auto py-6 text-neutral-800 font-bold drop-shadow-lg justify-center items-center w-full sm:hidden flex-col">
+            <NavLinks />
+          </nav>
+        )}
+      </header>
+      {isScrolledToTop && (
+        <a
+          href="#"
+          title="برو به بالا"
+          className="z-40 fixed right-5 bottom-10 bg-neutral-200 drop-shadow-md p-3 rounded-full to-top-button-anime"
+        >
+          <ChevronUp />
+        </a>
       )}
-    </header>
+    </>
   );
 };
 export default Header;
