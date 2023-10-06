@@ -14,8 +14,8 @@ const Div = styled.div<DivImageContainerProps>`
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: scroll;
-  width: 100%;
-  height: auto;
+  /* width: 100%; */
+  /* height: auto; */
 `;
 const BannerDiv = styled.div<DivImageContainerProps>`
   @media (min-width: 768px) {

@@ -35,17 +35,13 @@ const PostSearchFilterBox = ({ categories }: { categories: Category[] }) => {
           value={selectedCategory}
           className="w-full bg-purple-primary text-white bg-opacity-70 rounded-md drop-shadow-lg font-semibold"
         >
-          <option
-            title="تمام مقالات"
-            value=""
-            className="text-center text-black"
-          >
+          <option title="تمام مقالات" value="" className="text-center">
             تمام مقالات
           </option>
           {categories?.map((category: Category) => (
             <>
               <option
-                className="text-center text-black"
+                className="text-center"
                 title={category.title}
                 key={category._id}
                 value={category.title}

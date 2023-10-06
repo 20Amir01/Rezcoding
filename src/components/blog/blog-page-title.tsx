@@ -15,7 +15,7 @@ const BlogPageTitle = ({ categories }: { categories: Category[] }) => {
   return (
     <>
       {searchParams?.has("category") ? (
-        <p className="inline-flex gap-1 text-sm text-neutral-800">
+        <p className="inline-flex gap-1 text-md">
           <span>دسته بندی ها</span>
           <span>/</span>
           <span>
@@ -25,7 +25,7 @@ const BlogPageTitle = ({ categories }: { categories: Category[] }) => {
           </span>
         </p>
       ) : (
-        <p className="text-sm text-neutral-800">تمامی مقالات</p>
+        <p className="text-md">تمامی مقالات</p>
       )}
     </>
   );

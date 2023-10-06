@@ -35,7 +35,7 @@ const SocialLink = ({
       case "instagram":
         return <Instagram size={24} />;
       case "email":
-        return <LucideMail size={24} />
+        return <LucideMail size={24} />;
       default:
         return "logo";
     }
@@ -46,7 +46,7 @@ const SocialLink = ({
         className={
           isShareURL
             ? "bg-neutral-200 hover:bg-neutral-900 hover:text-neutral-200 transition-all duration-300 hover:scale-110 text-neutral-700 py-2 px-3 rounded-md"
-            : ""
+            : "hover:text-blue-primary hover:scale-105"
         }
       >
         {getIcon(platform)}

@@ -15,7 +15,7 @@ export default async function BlogPage() {
       </div>
       <PaddingContainer>
         <main className="space-y-10 mt-16 relative">
-          <div className="text-xl font-semibold inline-flex gap-2">
+          <div className="font-semibold inline-flex gap-2 text-gradient-custom">
             <BlogPageTitle categories={categories} />
           </div>
           {posts.length > 0 ? (

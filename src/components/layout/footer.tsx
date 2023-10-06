@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="space-y-2">
             <div className="flex flex-col items-center gap-1">
               <p className="text-[0.7rem] sm:text-[1rem]">طراحی و توسعه</p>
-              <div className="w-full">
+              <div className="w-full text-center">
                 <span className="text-[0.7rem] sm:text-[1rem]">
                   امیرمحمدهمتی{" "}
                 </span>
@@ -26,10 +26,10 @@ const Footer = () => {
               </div>
             </div>
             <div className="text-center flex flex-col items-center">
-              <p>راه های ارتباط با من</p>
-              <ChevronDown className="animate-bounce" />
+              {/* <ChevronDown className="animate-pulse" /> */}
             </div>
-            <div className="flex justify-center gap-2">
+            <div className="flex justify-center gap-2 text-sm sm:text-md items-center">
+              <p>راه های ارتباط با من :</p>
               <SocialLink
                 platform="github"
                 link={siteConfig.socialLinks.github}
@@ -50,10 +50,10 @@ const Footer = () => {
           </div>
         </div>
         {/* bottom section */}
-        <div className="py-3 border-t flex items-center gap-4 flex-wrap justify-center mt-2">
+        <div className="py-3 border-t text-center mt-2">
           <div>
-            <p className="text-neutral-400 text-[0.7rem] sm:text-[1rem]">
-              All rights are reserved | Copyright {new Date().getFullYear()}
+            <p className="text-neutral-400 mx-auto text-[0.7rem] sm:text-[0.8rem]">
+              all rights are reserved | Copyright {new Date().getFullYear()}
             </p>
           </div>
         </div>
