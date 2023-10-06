@@ -24,7 +24,7 @@ const SearchPostInput = () => {
       className="absolute top-[117%] left-0 flex justify-end w-full"
     >
       <button
-        className="rounded-r-md bg-neutral-900 text-white w-14 h-14 drop-shadow-md z-20 inline-flex justify-center items-center"
+        className="rounded-r-md bg-blue-primary text-white w-14 h-14 drop-shadow-md z-20 inline-flex justify-center items-center"
         title="جستجو"
       >
         <Search />

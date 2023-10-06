@@ -3,7 +3,7 @@ import React from "react";
 import TypeIt from "typeit-react";
 
 interface ClientSideTypeItProps {
-  options?: {};
+  options?: any;
   className?: string;
 }
 const ClientSideTypeIt = ({

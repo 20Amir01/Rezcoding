@@ -8,19 +8,19 @@ const NavLinks = () => {
   return (
     <>
       <Link
-        className={`sm:hidden ${pathname === "/" ? "text-blue-500" : ""}`}
+        className={`sm:hidden ${pathname === "/" ? "text-blue-primary" : ""}`}
         href="/"
       >
         صفحه اصلی
       </Link>
       <Link
-        className={`${pathname === "/blog" ? "text-blue-500" : ""}`}
+        className={`${pathname === "/blog" ? "text-blue-primary" : ""}`}
         href="/blog"
       >
         وبلاگ
       </Link>
       <Link
-        className={`${pathname === "/about-me" ? "text-blue-500" : ""}`}
+        className={`${pathname === "/about-me" ? "text-blue-primary" : ""}`}
         href="/about-me"
       >
         من کی ام ؟

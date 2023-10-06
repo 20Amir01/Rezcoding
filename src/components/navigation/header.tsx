@@ -33,16 +33,20 @@ const Header = ({ homePage = false }: { homePage?: boolean }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [scrollPrevPosition]);
-  const pathname=usePathname()
+  const pathname = usePathname();
   return (
     <>
       <header
         className={`transition-all ${
           homePage ? "" : "bg-white"
-        } drop-shadow navigation-anime transition-all top-0 left-0 right-0 z-50 ${
+        } drop-shadow navigation-anime transition-all duration-500 top-0 left-0 right-0 z-50 ${
           isScrolledToTop
             ? homePage
-              ? `fixed header-anime ${scrollPrevPosition > 0 && `bg-white`}`
+              ? `fixed header-anime ${
+                  scrollPrevPosition > 0
+                    ? `bg-white text-neutral-800`
+                    : "text-white"
+                }`
               : `sticky header-anime`
             : `static`
         } z-30`}
@@ -64,8 +68,16 @@ const Header = ({ homePage = false }: { homePage?: boolean }) => {
                   <Menu size={32} />
                 </button>
               </div>
-              <nav className={`items-center text-sm justify-center gap-2 hidden sm:flex ${pathname==="/"?nastalig_font.className+" sm:text-lg":""}`}>
-                <NavLinks/>
+              <nav
+                className={`items-center text-sm justify-center gap-2 hidden sm:flex ${
+                  pathname === "/" && "sm:text-lg gap-3"
+                } ${
+                  scrollPrevPosition > 0
+                    ? "text-neutral-800"
+                    : ""
+                }`}
+              >
+                <NavLinks />
               </nav>
             </div>
           </div>

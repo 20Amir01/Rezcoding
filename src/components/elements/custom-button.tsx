@@ -26,7 +26,7 @@ interface ButtonProps {
 }
 const Button = ({
   children,
-  bgColor = "#222",
+  bgColor = "",
   color = "#FFF",
   title = "",
   className = "",

@@ -101,7 +101,7 @@ const PostContent = ({
       {/* read more */}
       {!isPostPage && (
         <div
-          className={`flex gap-2 items-center text-neutral-500 font-semibold ${
+          className={`flex gap-2 items-center text-blue-primary text-opacity-70 font-semibold ${
             layout === "horizontal"
               ? "text-sm justify-center md:justify-start md:text-lg"
               : "text-sm justify-center"

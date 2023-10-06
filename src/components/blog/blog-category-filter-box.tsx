@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Button from "../elements/custom-button";
-import { useAllCategories } from "@/hooks/useClientCustoms";
 import { Category } from "../../../typing";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useBlog } from "@/contexts/blog-provider";
@@ -34,7 +33,7 @@ const PostSearchFilterBox = ({ categories }: { categories: Category[] }) => {
         <select
           onChange={handleCategoryChange}
           value={selectedCategory}
-          className="w-full bg-neutral-100 rounded-md drop-shadow-lg font-semibold"
+          className="w-full bg-purple-primary text-white bg-opacity-70 rounded-md drop-shadow-lg font-semibold"
         >
           <option
             title="تمام مقالات"
@@ -57,7 +56,7 @@ const PostSearchFilterBox = ({ categories }: { categories: Category[] }) => {
           ))}
         </select>
         <div className="flex justify-center">
-          <Button className="w-full">بزن بریم !</Button>
+          <Button className="w-full bg-blue-primary">بزن بریم !</Button>
         </div>
       </form>
     </div>

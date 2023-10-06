@@ -32,7 +32,7 @@ const PostSearchBar = ({ categories }: { categories: [] }) => {
             onClick={() => {
               dispatch({ type: "search-box-/toggle" });
             }}
-            className="text-sm"
+            className="text-sm bg-gradient-custom"
             title="جستجو در وبلاگ"
           >
             <span className="hidden md:block"> جست و جو در وبلاگ</span>
@@ -40,7 +40,7 @@ const PostSearchBar = ({ categories }: { categories: [] }) => {
           </Button>
           {searchQuery && (
             <Button
-              className="text-sm"
+              className="text-sm bg-gradient-custom"
               title="پاک کردن جستجو"
               onClick={() => dispatch({ type: "search-query-clear" })}
             >
@@ -53,7 +53,7 @@ const PostSearchBar = ({ categories }: { categories: [] }) => {
           onClick={() => {
             dispatch({ type: "category-box/toggle" });
           }}
-          className="text-sm"
+          className="text-sm bg-gradient-custom"
         >
           دسته بندی موضوعات
           <ChevronDown />

@@ -86,14 +86,14 @@ const PostList = ({ posts }: Props) => {
           </div>
         )}
       </div>
-      {pagesCount ? (
+      {pagesCount>1 ? (
         <div
           dir="ltr"
           className="flex justify-center items-center gap-2 text-center w-full p-10"
         >
           <button
             title="صفحه قبل"
-            className="bg-neutral-800 text-white rounded-full inline-flex items-center justify-center p-2"
+            className="bg-blue-primary text-white rounded-full inline-flex items-center justify-center p-2"
             onClick={() => dispatch({ type: "page-index/decreament" })}
           >
             <ChevronLeft />
@@ -104,7 +104,7 @@ const PostList = ({ posts }: Props) => {
             <span>{`${pagesCount}`}</span>
           </div>
           <button
-            className="bg-neutral-800 text-white rounded-full inline-flex items-center justify-center p-2"
+            className="bg-blue-primary text-white rounded-full inline-flex items-center justify-center p-2"
             title="صفحه بعد"
             onClick={() =>
               dispatch({

@@ -37,16 +37,22 @@ const BannerDiv = styled.div<DivImageContainerProps>`
 interface BgFixedDivProps {
   imageURL: string;
   children?: React.ReactNode;
+  className?:string;
   banner?: boolean;
 }
 const BgFixedDiv = ({
   imageURL,
   children,
+  className="",
   banner = false,
 }: BgFixedDivProps) => {
   const url = imageURL;
   if (banner) return <BannerDiv imageURL={url}>{children}</BannerDiv>;
-  return <Div imageURL={url}>{children}</Div>;
+  return (
+    <Div imageURL={url} className={className}>
+      {children}
+    </Div>
+  );
 };
 
 export default BgFixedDiv;
