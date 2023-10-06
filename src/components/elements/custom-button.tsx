@@ -24,7 +24,7 @@ interface ButtonProps {
   onClick?: () => void;
   className?: string;
 }
-const Button = ({
+const CustomButton = ({
   children,
   bgColor = "",
   color = "#FFF",
@@ -58,4 +58,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default CustomButton;

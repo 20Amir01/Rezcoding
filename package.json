@@ -19,7 +19,6 @@
     "next-sanity": "^5.5.4",
     "react": "latest",
     "react-dom": "latest",
-    "react-parallax": "^3.5.1",
     "react-portable-text": "^0.6.0",
     "react-query": "^3.39.3",
     "reading-time": "^1.5.0",

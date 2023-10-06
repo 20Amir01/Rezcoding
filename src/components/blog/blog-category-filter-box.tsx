@@ -1,11 +1,11 @@
-"use client";
+// "use client";
 import React, { useEffect, useState } from "react";
 import Button from "../elements/custom-button";
 import { Category } from "../../../typing";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useBlog } from "@/contexts/blog-provider";
 
-const PostSearchFilterBox = ({ categories }: { categories: Category[] }) => {
+const BlogCategoriesFilterBox = ({ categories }: { categories: Category[] }) => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const { dispatch } = useBlog();
   const router = useRouter();
@@ -59,4 +59,4 @@ const PostSearchFilterBox = ({ categories }: { categories: Category[] }) => {
   );
 };
 
-export default PostSearchFilterBox;
+export default BlogCategoriesFilterBox;

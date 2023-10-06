@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -26,7 +26,7 @@ const NavLinks = () => {
       <Link
         className={`${
           pathname === "/about-me" ? "text-blue-primary" : ""
-        }w-full sm:w-auto py-2 sm:py-0 text-center`}
+        } w-full sm:w-auto py-2 sm:py-0 text-center`}
         href="/about-me"
       >
         من کی ام ؟

@@ -7,11 +7,6 @@ import NavLinks from "./nav-links";
 import { ChevronUp, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { Noto_Nastaliq_Urdu } from "next/font/google";
-const nastalig_font = Noto_Nastaliq_Urdu({
-  weight: "400",
-  subsets: ["arabic"],
-});
 const Header = ({ homePage = false }: { homePage?: boolean }) => {
   const { dispatch } = useBlog();
   const [isScrolledToTop, setIsScrolledToTop] = useState(false);

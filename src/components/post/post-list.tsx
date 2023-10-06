@@ -1,5 +1,4 @@
 "use client";
-import React, { useEffect } from "react";
 import PostCard from "./post-card";
 import { Post } from "../../../typing";
 import getPosts from "@/helpers/get-posts";
@@ -7,7 +6,6 @@ import { useQuery } from "react-query";
 import { useSearchParams } from "next/navigation";
 import { useBlog } from "@/contexts/blog-provider";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Button from "../elements/custom-button";
 interface Props {
   posts: Post;
 }

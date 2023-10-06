@@ -4,7 +4,6 @@ import PostContent from "./post-content";
 import { Post } from "../../../typing";
 import Image from "next/image";
 import urlFor from "@/lib/url-for";
-import ClientSideRoute from "../../helpers/client-side-route";
 import Link from "next/link";
 
 interface PostProps {

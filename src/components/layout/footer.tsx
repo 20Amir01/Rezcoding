@@ -1,10 +1,6 @@
-import React from "react";
 import PaddingContainer from "./padding-container";
-
 import SocialLink from "../elements/social-link";
 import siteConfig from "@/config/site";
-import { ChevronDown } from "lucide-react";
-
 const Footer = () => {
   return (
     <footer className="py-8 from-white via-white to-neutral-50 mt-10 bg-gradient-to-b">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { Category } from "../../../typing";
 import getCategories from "@/helpers/get-categories";
 import { useQuery } from "react-query";

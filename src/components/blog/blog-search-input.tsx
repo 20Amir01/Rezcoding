@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Search } from "lucide-react";
 import { useBlog } from "@/contexts/blog-provider";
 
-const SearchPostInput = () => {
+const BlogSearchInput = () => {
   const [searchInputValue, setSearchInputValue] = useState<string>("");
   const {
     dispatch,
@@ -44,4 +44,4 @@ const SearchPostInput = () => {
   );
 };
 
-export default SearchPostInput;
+export default BlogSearchInput;

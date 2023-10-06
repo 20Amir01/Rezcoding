@@ -40,7 +40,7 @@ interface BgFixedDivProps {
   className?:string;
   banner?: boolean;
 }
-const BgFixedDiv = ({
+const BackgroundFixedDiv = ({
   imageURL,
   children,
   className="",
@@ -55,7 +55,7 @@ const BgFixedDiv = ({
   );
 };
 
-export default BgFixedDiv;
+export default BackgroundFixedDiv;
 // https://i.ibb.co/wcY820P/Grey-Minimalist-Tips-Blog-Banner.png
 // https://i.ibb.co/sts1JWD/logo-no-background.png
 // https://i.ibb.co/ZKp6nbD/me.png

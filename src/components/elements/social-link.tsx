@@ -5,7 +5,6 @@ import {
   Github,
   Youtube,
   Facebook,
-  Mail,
   LucideMail,
 } from "lucide-react";
 import Link from "next/link";
@@ -41,7 +40,7 @@ const SocialLink = ({
     }
   };
   return (
-    <Link href={link}>
+    <Link prefetch={false} href={link}>
       <div
         className={
           isShareURL

@@ -1,5 +1,3 @@
-import React from "react";
-
 import PostContent from "./post-content";
 // import PaddingContainer from "../layout/PaddingContainer";
 import { Post } from "../../../typing";

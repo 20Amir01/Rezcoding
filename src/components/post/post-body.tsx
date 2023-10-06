@@ -1,4 +1,3 @@
-import React from "react";
 import { Block } from "../../../typing";
 import { PortableText } from "@portabletext/react";
 import RichTextComponents from "../../helpers/rich-text-components";

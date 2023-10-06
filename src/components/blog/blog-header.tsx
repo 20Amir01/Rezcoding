@@ -1,6 +1,6 @@
 "use client";
-import { ChevronDown, Library, Search, Trash2 } from "lucide-react";
-import React, { useContext, useEffect, useState } from "react";
+import { ChevronDown, Search, Trash2 } from "lucide-react";
+import { useEffect } from "react";
 import Button from "../elements/custom-button";
 import PostSearchFilterBox from "./blog-category-filter-box";
 import SearchPostInput from "./blog-search-input";
@@ -9,7 +9,7 @@ import { useQuery } from "react-query";
 import getCategories from "@/helpers/get-categories";
 import { useBlog } from "@/contexts/blog-provider";
 
-const PostSearchBar = ({ categories }: { categories: [] }) => {
+const BlogHeader = ({ categories }: { categories: [] }) => {
   const { data: categoriesData } = useQuery({
     queryKey: ["categories"],
     queryFn: getCategories,
@@ -67,4 +67,4 @@ const PostSearchBar = ({ categories }: { categories: [] }) => {
   );
 };
 
-export default PostSearchBar;
+export default BlogHeader;

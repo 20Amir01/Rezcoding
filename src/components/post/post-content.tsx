@@ -11,7 +11,6 @@ interface PostContentProps {
   isPostPage?: boolean;
   layout?: "vertical" | "horizontal";
 }
-
 const PostContent = ({
   post,
   isPostPage = false,
@@ -20,7 +19,7 @@ const PostContent = ({
   return (
     <div className="space-y-2">
       {/* tags */}
-      {post ? (
+      {post && (
         <div
           className={`text-[0.6rem] lg:text-[0.8rem] flex-wrap flex justify-start items-center text-neutral-400 ${
             isPostPage ? "md:text-[100%]" : ""
@@ -75,9 +74,7 @@ const PostContent = ({
             </span>
           )}
         </div>
-      ) : (
-        <span>tags</span>
-      )}
+      ) }
       {/* post title */}
       {isPostPage ? (
         <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl w-full max-w-4xl mx-auto text-neutral-600">
