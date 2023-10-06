@@ -15,7 +15,7 @@ const MobileNav = () => {
   return (
     <>
       {mobileMenuToggle && (
-        <nav className="flex fixed right-0 top-0 h-[100dvh] z-[1000] text-md gap-3 mobile-nav-anime transition-all bg-white bg-opacity-75 backdrop-blur-md text-neutral-800 font-bold drop-shadow-lg justify-center items-center w-full sm:hidden flex-col">
+        <nav className="flex fixed right-0 top-0 h-[100dvh] z-[1000] text-xl gap-2 mobile-nav-anime transition-all bg-white bg-opacity-75 backdrop-blur-md text-neutral-800 font-bold drop-shadow-lg justify-center items-center w-full sm:hidden flex-col">
           <button
             onClick={() => {
               dispatch({ type: "mobile-menu/close" });

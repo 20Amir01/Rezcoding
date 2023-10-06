@@ -21,30 +21,35 @@ const HomePage = async () => {
 
   return (
     <>
-      <BgFixedDiv className="h-screen" imageURL={coffe_laptop_image.src}>
+      <BgFixedDiv
+        className="h-[400px] relative"
+        imageURL={coffe_laptop_image.src}
+      >
         {/* <div className="h-full w-full bg-gradient-to-t opacity-20 from-purple-primary to-blue-primary" /> */}
         <div className="h-full w-full test opacity-40 z-10 bg-gradient-custom-animation" />
-        <PaddingContainer className="absolute bottom-10 inset-x-0 w-full flex items-end">
-          <div className="bg-center bg-cover text-white bg-gradient-custom border-radius-custom-2 max-w-lg p-10">
-            <blockquote className="relative max-w-md sm:text-neutral-800 italic text-sm sm:text-xl mx-auto mb-10">
-              <p className="leading-10 text-white text-opacity-70">
-                “ برنامه‌نویسی این امکان رو به شما می‌ده تا در مورد خودِ «فکر
-                کردن» فکر کنید و وقتی‌ هم که دیباگ می‌کنید، در مورد خودِ
-                «یادگیری» یاد می‌گیرید. ”
-              </p>
-              <cite className="text-white text-opacity-70">
-                نیکلاس نگروپونته
-              </cite>
-            </blockquote>
+        <div className="absolute -bottom-20 right-0 w-full left-0">
+          <div className="mx-auto max-w-7xl flex justify-center sm:justify-start px-2">
+            <div className="bg-center bg-cover text-white bg-gradient-custom border-radius-custom-2 max-w-lg p-10 ">
+              <blockquote className="max-w-md sm:text-neutral-800 text-sm sm:text-xl mx-auto mb-10">
+                <p className="leading-10 italic text-white text-opacity-70">
+                  “ برنامه‌نویسی این امکان رو به شما می‌ده تا در مورد خودِ «فکر
+                  کردن» فکر کنید و وقتی‌ هم که دیباگ می‌کنید، در مورد خودِ
+                  «یادگیری» یاد می‌گیرید. ”
+                </p>
+                <cite className="text-white text-opacity-70">
+                  نیکلاس نگروپونته
+                </cite>
+              </blockquote>
+            </div>
           </div>
-        </PaddingContainer>
+        </div>
       </BgFixedDiv>
       <div className="w-full h-auto">
         <div className="grid grid-cols-1 w-full h-full gap-5">
           <PaddingContainer>
-            <div className="w-full my-10 flex flex-col items-center sm:flex-row justify-center gap-10">
+            <div className="w-full mt-16 flex items-center flex-row justify-center gap-10">
               <div className="h-full flex justify-center items-center">
-                <p className="text-4xl font-bold text-gradient-custom">
+                <p className="text-lg sm:text-4xl font-bold text-gradient-custom">
                   حالا اینجا کجاست
                 </p>
               </div>
@@ -55,10 +60,10 @@ const HomePage = async () => {
               </div>
             </div>
             <div className="rounded-md w-full h-auto flex flex-col gap-10 text-lg p-5">
-              <p className="mx-auto max-w-md text-justify bg-blue-primary bg-opacity-30 border-radius-custom-1 p-10 rounded-md text-neutral-800">
+              <p className="mx-auto max-w-md text-justify bg-purple-primary bg-opacity-60 border-radius-custom-1 p-10 rounded-md text-neutral-100">
                 در این وبسایت مطالب و مقالاتی از موضوعات مختلف مانند کامپیوتر و
                 برنامه نویسی قرار خواهد گرفت که از بخش{" "}
-                <Link className="text-blue-primary font-semibold" href="/blog">
+                <Link className="animate-pulse font-semibold" href="/blog">
                   وبلاگ
                 </Link>{" "}
                 قابل دسترسی و مطالعه هستند .
@@ -77,7 +82,7 @@ const HomePage = async () => {
               <p className="text-center">
                 اگر تمایل دارید کمی با من آشنا بشید میتونید به بخش{" "}
                 <Link
-                  className="text-purple-primary font-semibold"
+                  className="text-purple-primary animate-pulse font-semibold"
                   href="/about-me"
                 >
                   من کیم ؟

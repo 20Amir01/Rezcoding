@@ -37,26 +37,16 @@ const Header = ({ homePage = false }: { homePage?: boolean }) => {
   return (
     <>
       <header
-        className={`transition-all ${
-          homePage ? "" : "bg-white"
-        } drop-shadow navigation-anime transition-all duration-500 top-0 left-0 right-0 z-50 ${
-          isScrolledToTop
-            ? homePage
-              ? `fixed header-anime ${
-                  scrollPrevPosition > 0
-                    ? `bg-white text-neutral-800`
-                    : "text-white"
-                }`
-              : `sticky header-anime`
-            : `static`
+        className={`drop-shadow bg-white navigation-anime transition-all duration-500 w-full top-0 left-0 right-0 z-50 ${
+          isScrolledToTop ? (homePage ? "" : `sticky header-anime`) : `static`
         } z-30`}
       >
-        <PaddingContainer>
-          <div className="py-5 flex items-center justify-between flex-row-reverse relative">
-            <Link className="font-bold text-lg" href="/">
+        <PaddingContainer className="w-full h-full">
+          <div className="py-4 flex items-center justify-between flex-row-reverse relative">
+            <Link title="صفحه اصلی" className="font-bold text-lg" href="/">
               <Logo />
             </Link>
-            <div className="flex items-center gap-1.5 font-semibold text-neutral-700">
+            <div className="flex flex-row flex-wrap items-center gap-1.5 font-semibold text-neutral-700">
               <div className="md:hidden flex items-center">
                 <button
                   className="sm:hidden"
@@ -69,13 +59,7 @@ const Header = ({ homePage = false }: { homePage?: boolean }) => {
                 </button>
               </div>
               <nav
-                className={`items-center text-sm justify-center gap-2 hidden sm:flex ${
-                  pathname === "/" && "sm:text-lg gap-3"
-                } ${
-                  scrollPrevPosition > 0
-                    ? "text-neutral-800"
-                    : ""
-                }`}
+                className={`items-center text-md w-full justify-center gap-2 hidden sm:flex`}
               >
                 <NavLinks />
               </nav>
