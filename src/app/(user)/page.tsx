@@ -17,15 +17,16 @@ const HomePage = async () => {
   return (
     <>
       <BgFixedDiv
-        className="h-[400px] relative"
+        banner
+        className="relative"
         imageURL={"https://i.ibb.co/0C51P6B/laptop-coffee.jpg"}
       >
         {/* <div className="h-full w-full bg-gradient-to-t opacity-20 from-purple-primary to-blue-primary" /> */}
         <div className="h-full w-full test opacity-40 z-10 bg-gradient-custom-animation" />
-        <div className="absolute -bottom-20 right-0 w-full left-0">
+        <div className="absolute -bottom-32 sm:-bottom-20 right-0 w-full left-0">
           <div className="mx-auto max-w-7xl flex justify-center sm:justify-start px-2">
             <div className="bg-center bg-cover text-white bg-gradient-custom border-radius-custom-2 max-w-lg p-10 ">
-              <blockquote className="max-w-md sm:text-neutral-800 text-sm sm:text-xl mx-auto mb-10">
+              <blockquote className="max-w-md sm:text-neutral-800 text-[0.8rem] sm:text-xl mx-auto">
                 <p className="leading-10 italic text-white text-opacity-70">
                   “ برنامه‌نویسی این امکان رو به شما می‌ده تا در مورد خودِ «فکر
                   کردن» فکر کنید و وقتی‌ هم که دیباگ می‌کنید، در مورد خودِ
@@ -45,7 +46,7 @@ const HomePage = async () => {
           </div>
         </div>
       </BgFixedDiv>
-      <div className="w-full h-auto bg-neutral-50">
+      <div className="w-full h-auto bg-neutral-50 my-10">
         <div className="grid grid-cols-1 w-full h-full gap-5">
           <PaddingContainer>
             <div className="w-full mt-16 flex items-center flex-row justify-center gap-10">
@@ -74,9 +75,9 @@ const HomePage = async () => {
                   <p className="text-center text-gradient-custom text-3xl font-semibold border-b-2 py-5">
                     دو مقاله آخر
                   </p>
-                  <div className="grid grid-cols-1 max-w-4xl mx-auto w-full h-full gap-10">
-                    <PostCard post={posts?.at(0)} />
-                    <PostCard post={posts?.at(1)} reverse />
+                  <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto w-full h-full gap-10">
+                    <PostCard post={posts?.at(0)} layout="vertical"/>
+                    <PostCard post={posts?.at(1)} layout="vertical"/>
                   </div>
                 </>
               ) : (

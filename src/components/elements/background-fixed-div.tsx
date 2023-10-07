@@ -20,7 +20,7 @@ const Div = styled.div<DivImageContainerProps>`
 const BannerDiv = styled.div<DivImageContainerProps>`
   @media (min-width: 768px) {
     height: auto;
-    max-height: 100dvh;
+    max-height: 50dvh;
     background-attachment: fixed;
   }
   position: relative;
