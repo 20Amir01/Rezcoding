@@ -1,14 +1,17 @@
 "use client";
 import Link from "next/link";
 import PaddingContainer from "../layout/padding-container";
-import { useBlog } from "@/contexts/blog-provider";
-import Logo from "../elements/logo";
+import { useDispatch } from "react-redux";
+// import { useBlog } from "@/contexts/blog-provider";
+import Logo from "../elements/Logo";
 import NavLinks from "./nav-links";
 import { ChevronUp, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { openMobileMenu } from "@/redux/features/mobile-menu/mobile-menu-slice";
 const Header = ({ homePage = false }: { homePage?: boolean }) => {
-  const { dispatch } = useBlog();
+  // const { dispatch } = useBlog();
+  const dispatch = useDispatch();
   const [isScrolledToTop, setIsScrolledToTop] = useState(false);
   const [scrollPrevPosition, setScrollPosition] = useState(0);
   useEffect(() => {
@@ -46,7 +49,8 @@ const Header = ({ homePage = false }: { homePage?: boolean }) => {
                 <button
                   className="sm:hidden"
                   onClick={() => {
-                    dispatch({ type: "mobile-menu/open" });
+                    // dispatch({ type: "mobile-menu/open" });
+                    dispatch(openMobileMenu());
                   }}
                   title="menu"
                 >

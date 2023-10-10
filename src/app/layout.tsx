@@ -1,8 +1,9 @@
-import Provider from "@/helpers/provider";
+// import Provider from "@/helpers/provider";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Noto_Sans_Arabic} from "next/font/google";
+import { Noto_Sans_Arabic } from "next/font/google";
 import ReactQueryClientProvider from "@/lib/react-query-client-provider";
+import ClientSideProvider from "@/redux/provider";
 export const FONT_PRIMARY = Noto_Sans_Arabic({ subsets: ["arabic"] });
 
 export const metadata: Metadata = {
@@ -21,9 +22,11 @@ export default function RootLayout({
       dir="rtl"
       className="selection:text-neutral-100 selection:bg-neutral-700"
     >
-      <body className={`${FONT_PRIMARY.className} bg-neutral-50 sm:overflow-auto`}>
+      <body
+        className={`${FONT_PRIMARY.className} bg-neutral-50 sm:overflow-auto`}
+      >
         <ReactQueryClientProvider>
-          <Provider>{children}</Provider>
+          <ClientSideProvider>{children}</ClientSideProvider>
         </ReactQueryClientProvider>
       </body>
     </html>

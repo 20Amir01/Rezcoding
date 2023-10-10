@@ -4,8 +4,14 @@ import { Post } from "../../../typing";
 import getPosts from "@/helpers/get-posts";
 import { useQuery } from "react-query";
 import { useSearchParams } from "next/navigation";
-import { useBlog } from "@/contexts/blog-provider";
+// import { useBlog } from "@/contexts/blog-provider";
+import { useDispatch, useSelector } from "react-redux";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { RootState } from "@/redux/store";
+import {
+  decreamentPageIndex,
+  increamentPageIndex,
+} from "@/redux/features/posts/post-slice";
 interface Props {
   posts: Post;
 }
@@ -16,11 +22,16 @@ const PostList = ({ posts }: Props) => {
     initialData: posts,
   });
 
-  const {
-    state: { searchQuery, pageIndex, postCountPerPage },
-    dispatch,
-  } = useBlog();
+  // const {
+  //   state: { searchQuery, pageIndex, postCountPerPage },
+  //   dispatch,
+  // } = useBlog();
 
+  const dispatch = useDispatch();
+  const { pageIndex, postCountPerPage } = useSelector(
+    (state: RootState) => state.posts
+  );
+  const searchQuery = useSelector((state: RootState) => state.search.searchQuery);
   const searchParams = useSearchParams();
   let filteredPosts = searchParams?.has("category")
     ? postsData.filter((post: Post) =>
@@ -29,7 +40,7 @@ const PostList = ({ posts }: Props) => {
         )
       )
     : postsData;
-  const searchWords = searchQuery.split(" ");
+  const searchWords = searchQuery?.split(" ");
   filteredPosts = filteredPosts.filter((post: Post) => {
     return searchWords.every((searchWord: string) => {
       const postTitle = post.title.replace(/\s/g, ""); // Remove spaces from post title
@@ -84,7 +95,7 @@ const PostList = ({ posts }: Props) => {
           </div>
         )}
       </div>
-      {pagesCount>1 ? (
+      {pagesCount > 1 ? (
         <div
           dir="ltr"
           className="flex justify-center items-center gap-2 text-center w-full p-10"
@@ -92,7 +103,8 @@ const PostList = ({ posts }: Props) => {
           <button
             title="صفحه قبل"
             className="bg-blue-primary text-white rounded-full inline-flex items-center justify-center p-2"
-            onClick={() => dispatch({ type: "page-index/decreament" })}
+            // onClick={() => dispatch({ type: "page-index/decreament" })}
+            onClick={() => dispatch(decreamentPageIndex())}
           >
             <ChevronLeft />
           </button>
@@ -104,12 +116,15 @@ const PostList = ({ posts }: Props) => {
           <button
             className="bg-blue-primary text-white rounded-full inline-flex items-center justify-center p-2"
             title="صفحه بعد"
-            onClick={() =>
-              dispatch({
-                type: "page-index/increament",
-                payload: pagesCount,
-              })
-            }
+            // onClick={() =>
+            //   dispatch({
+            //     type: "page-index/increament",
+            //     payload: pagesCount,
+            //   })
+            // }
+            onClick={() => {
+              dispatch(increamentPageIndex(pagesCount));
+            }}
           >
             <ChevronRight />
           </button>

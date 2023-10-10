@@ -1,19 +1,29 @@
 "use client";
 import React, { useState } from "react";
 import { Search } from "lucide-react";
-import { useBlog } from "@/contexts/blog-provider";
-
+import {
+  clearSearchQuery,
+  setSearchQuery,
+} from "@/redux/features/search/search-slice";
+// import { useBlog } from "@/contexts/blog-provider";
+import { useDispatch , useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 const BlogSearchInput = () => {
   const [searchInputValue, setSearchInputValue] = useState<string>("");
-  const {
-    dispatch,
-    state: { searchQuery },
-  } = useBlog();
+  // const {
+  //   dispatch,
+  //   state: { searchQuery },
+  // } = useBlog();
+  const {searchQuery} = useSelector((state:RootState)=>state.search)
+  const dispatch = useDispatch();
   const handleSubmit = () => {
-    if (!searchInputValue) dispatch({ type: "search-query-clear" });
+    // if (!searchInputValue) dispatch({ type: "search-query-clear" });
+    // if (!searchInputValue) return;
+    // // dispatch({ type: "search-box-/close" });
+    // dispatch({ type: "search-query-set", payload: searchInputValue });
+    if (!searchInputValue) dispatch(clearSearchQuery());
     if (!searchInputValue) return;
-    // dispatch({ type: "search-box-/close" });
-    dispatch({ type: "search-query-set", payload: searchInputValue });
+    dispatch(setSearchQuery(searchInputValue));
   };
   return (
     <form

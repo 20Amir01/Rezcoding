@@ -10,10 +10,10 @@ interface InitialStateTypes {
   categoryBoxToggle: boolean;
 }
 const initialState: InitialStateTypes = {
-  searchQuery: "",
   pageIndex: 1,
   postCountPerPage: 8,
   mobileMenuToggle: false,
+  searchQuery: "",
   searchBoxToggle: false,
   categoryBoxToggle: false,
 };
